@@ -67,13 +67,10 @@ get_header();
 				</div><!-- .nav-links -->
 			</nav><!-- #image-navigation -->
 
-			<?php comments_template(); ?>
-
 		<?php endwhile; // end of the loop. ?>
 
 		</div><!-- #content -->
 	</section><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
