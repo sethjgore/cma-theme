@@ -42,17 +42,82 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="header-main">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<div class="wrapper">
+				<div class="row">
+					<div class="col-xs-8">
+						<a class="main-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<svg class="hide-IE" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="0 0 337.235 201.253" enable-background="new 0 0 337.235 201.253"
+								 xml:space="preserve">
+								 <title>CMA Technology Souitions Baton Rouge</title>
+							<g>
+								<g>
+									<path fill="#00476C" d="M57.139,113.912c-31.524-9.523-49.981-40.784-41.196-69.818c8.77-29.03,41.442-44.838,72.979-35.312
+										c4.187,1.264,8.125,2.927,11.818,4.901C94.837,8.885,87.922,5.138,80.195,2.799C48.463-6.793,14.992,11.022,5.458,42.593
+										c-9.55,31.579,8.442,64.952,40.18,74.542c12.841,3.887,25.96,3.277,37.672-0.904C74.854,117.256,65.952,116.572,57.139,113.912z"
+										/>
+									<path fill="#00476C" d="M165.271,142.123c71.727,0,134.774,7.385,170.978,18.537c-31.177-15.652-95.5-26.406-169.844-26.406
+										C94.709,134.254,32.312,144.248,0,159C36.91,148.777,97.184,142.123,165.271,142.123z"/>
+									<g>
+										<polygon fill="#00476C" points="283.341,0 280.233,8.087 283.35,16.841 307.041,78.412 260.563,78.412 257.996,85.001 
+											309.779,85.001 323.03,119.67 329.732,119.648 			"/>
+										<polygon fill="#AFA754" points="282.759,17.896 279.643,9.376 237.067,119.623 243.42,119.58 			"/>
+									</g>
+									<g>
+										<polygon fill="#AFA754" points="194.678,46.109 195.734,43.382 203.3,23.383 200.511,12.208 166.482,101.764 170.081,110.727 
+											194.684,46.125 			"/>
+										<polygon fill="#AFA754" points="127.132,23.628 123.104,13.057 96.122,119.387 102.754,119.387 126.823,24.741 			"/>
+									</g>
+									<g>
+										<polygon fill="#00476C" points="165.834,103.613 126.334,0.104 123.524,11.244 127.603,21.991 165.737,122.396 169.398,112.73 
+														"/>
+										<polygon fill="#00476C" points="205.16,0.223 201.128,10.812 203.906,22.09 228.54,119.521 235.338,119.521 			"/>
+									</g>
+									<g>
+										<text transform="matrix(1 0 0 1 2.6123 189.1055)" fill="#00476C" font-family="'Helvetica-Bold'" font-size="32.2673">T</text>
+										<text transform="matrix(1 0 0 1 19.9404 189.1055)" fill="#00476C" font-family="'Helvetica-Bold'" font-size="32.2673">echnology Solutions</text>
+									</g>
+								</g>
+							</g>
+							</svg>
 
-			<div class="search-toggle">
-				<a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
-			</div>
-
-			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-				<h1 class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></h1>
-				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-			</nav>
+							<img class="IE-icon show-IE" src="<?php bloginfo('template_directory'); ?>/images/CMA-Technology-Solutions-Baton-Rouge-LA-cherbonnier-mayer-associates.png" alt="CMA Technology Souitions Baton Rouge">
+						</a>
+					</div><!-- /.col-xs-8 -->
+					<div class="col-xs-12 pull-right header-contact">
+						<div class="row">
+							<div class="col-xs-24 col-md-8 header-email">
+								<a href="mailto:info@cmaontheweb.com">info@cmaontheweb.com</a>
+							</div><!-- .col-xs-24 col-md-8 -->
+							<div class="col-xs-24 col-md-8 header-phone">
+								800-349-9200
+							</div><!-- .col-xs-24 col-md-7 -->
+							<div class="col-xs-24 col-md-8">
+								<?php get_search_form(); ?>
+							</div><!-- /.col-xs-24 col-md-8 -->
+						</div><!-- .row -->
+					</div><!-- /.col-xs-16 -->
+				</div><!-- /.row -->
+			</div><!-- /.wrapper -->
+			<div class="menu-bar">
+			    <div class="wrapper">
+			    	<div class="row">
+				    	<div class="col-md-24 col-sm-20">
+							<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+								<h1 class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></h1>
+								<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
+								<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+							</nav>
+						</div><!-- /.col-md-24 col-sm-20 -->
+						<div class="visible-sm col-sm-4">
+							<div class="search-toggle ">
+								<a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
+							</div>
+						</div><!-- /.col-xs-6 -->
+				    </div><!-- /.row -->
+			    </div><!-- /.wrapper -->
+			</div><!--  /.menu-bar -->
+			
 		</div>
 
 		<div id="search-container" class="search-box-wrapper hide">
