@@ -54,67 +54,7 @@
 		}
 	} );
 
-	$( function() {
-		// Search toggle.
-		$( '.search-toggle' ).on( 'click.twentyfourteen', function( event ) {
-			var that    = $( this ),
-				wrapper = $( '.search-box-wrapper' );
-
-			that.toggleClass( 'active' );
-			wrapper.toggleClass( 'hide' );
-
-			if ( that.is( '.active' ) || $( '.search-toggle .screen-reader-text' )[0] === event.target ) {
-				wrapper.find( '.search-field' ).focus();
-			}
-		} );
-
-		/*
-		 * Fixed header for large screen.
-		 * If the header becomes more than 48px tall, unfix the header.
-		 *
-		 * The callback on the scroll event is only added if there is a header
-		 * image and we are not on mobile.
-		 */
-		if ( _window.width() > 781 ) {
-			var mastheadHeight = $( '#masthead' ).height(),
-				toolbarOffset, mastheadOffset;
-
-			if ( mastheadHeight > 48 ) {
-				body.removeClass( 'masthead-fixed' );
-			}
-
-			if ( body.is( '.header-image' ) ) {
-				toolbarOffset  = body.is( '.admin-bar' ) ? $( '#wpadminbar' ).height() : 0;
-				mastheadOffset = $( '#masthead' ).offset().top - toolbarOffset;
-
-				_window.on( 'scroll.twentyfourteen', function() {
-					if ( ( window.scrollY > mastheadOffset ) && ( mastheadHeight < 49 ) ) {
-						body.addClass( 'masthead-fixed' );
-					} else {
-						body.removeClass( 'masthead-fixed' );
-					}
-				} );
-			}
-		}
-
-		// Focus styles for menus.
-		$( '.primary-navigation, .secondary-navigation' ).find( 'a' ).on( 'focus.twentyfourteen blur.twentyfourteen', function() {
-			$( this ).parents().toggleClass( 'focus' );
-		} );
-	} );
-
-	// Arrange footer widgets vertically.
-	if ( $.isFunction( $.fn.masonry ) ) {
-		$( '#footer-sidebar' ).masonry( {
-			itemSelector: '.widget',
-			columnWidth: function( containerWidth ) {
-				return containerWidth / 4;
-			},
-			gutterWidth: 0,
-			isResizable: true,
-			isRTL: $( 'body' ).is( '.rtl' )
-		} );
-	}
+	
 
 	// Initialize Featured Content slider.
 	_window.load( function() {
@@ -125,4 +65,5 @@
 			} );
 		}
 	} );
+	
 } )( jQuery );

@@ -87,7 +87,7 @@
 					<div class="col-xs-12 pull-right header-contact">
 						<div class="row">
 							<div class="col-xs-24 col-md-8 header-email">
-								<a href="mailto:info@cmaontheweb.com">info@cmaontheweb.com</a>
+								<a target="_blank" href="mailto:info@cmaontheweb.com">info@cmaontheweb.com</a>
 							</div><!-- .col-xs-24 col-md-8 -->
 							<div class="col-xs-24 col-md-8 header-phone">
 								800-349-9200
