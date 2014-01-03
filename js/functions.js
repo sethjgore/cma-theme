@@ -65,5 +65,19 @@
 			} );
 		}
 	} );
+
+	//Initialize Client Scroller
+    if(document.getElementById("logo-scroller") !== null){
+    	$("#logo-scroller").simplyScroll({
+    		pauseOnHover: true,
+    		pauseOnTouch: true,
+    		speed: 1.5
+       	});
+    }
+    
+    $('#logo-scroller li a.no-link').click(function(e) {
+    	e.preventDefault();
+    });
+	
 	
 } )( jQuery );

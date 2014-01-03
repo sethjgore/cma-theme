@@ -82,6 +82,7 @@ function twentyfourteen_setup() {
 	register_nav_menus( array(
 		'primary'   => __( 'Top primary menu', 'twentyfourteen' ),
 		'secondary' => __( 'Secondary menu in left sidebar', 'twentyfourteen' ),
+		'footer_menu' => __( 'Footer Menu', 'twentyfourteen' ),
 	) );
 
 	/*
@@ -536,4 +537,13 @@ require get_template_directory() . '/inc/customizer.php';
  */
 if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow'] ) {
 	require get_template_directory() . '/inc/featured-content.php';
+}
+
+ /*
+*  Change the Options Page menu to 'Theme Options'
+*/
+ 
+if( function_exists('acf_set_options_page_title') )
+{
+    acf_set_options_page_title( __('Footer') );
 }

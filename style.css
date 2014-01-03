@@ -111,8 +111,13 @@ body {
 }
 
 a {
-	color: #24890d;
+	color: #1f95bc;
 	text-decoration: none;
+	-webkit-transition: .5s color linear;
+	-moz-transition: .5s color linear;
+	-ms-transition: .5s color linear;
+	-o-transition: .5s color linear;
+	transition: .5s color linear;
 }
 
 a:focus {
@@ -126,7 +131,7 @@ a:active {
 
 a:active,
 a:hover {
-	color: #41a62a;
+	color: #15637c;
 }
 
 h1,
@@ -809,9 +814,8 @@ span + .edit-link:before,
 
 .wrapper{
 	max-width: 1000px;
-	padding: 0 15px;
+	padding: 0px 15px;
 	margin: 0 auto;
-	/* position: relative; */
 	width: 100%;
 }
 
@@ -1268,7 +1272,158 @@ span + .edit-link:before,
 }
 .section_link h4 a:hover{
 	text-decoration: none;
-	color: #5bb1ce;
+	color: #15637c;
+}
+.latest_news{
+	text-align: center;
+	background: #ecf0f1;
+	border-top: #e7ebec;
+	margin-top: 80px;
+	min-height: 145px;
+	-webkit-box-shadow: 0 0 1px rgba(0,0,0,0.4);
+	-moz-box-shadow: 0 0 1px rgba(0,0,0,0.4);
+	box-shadow: 0 0 1px rgba(0,0,0,0.4);
+}
+.latest_news h3{
+	text-transform: uppercase;
+	color: #7f8c8d;
+	font-size: 14px;
+	margin-top: -29px;
+	margin-bottom: 0;
+}
+.latest_news img.news_arc{
+	margin-top: -51px;
+}
+.latest_news svg{
+	height: 48px;
+	margin-left: 5px;
+}
+.latest_news a{
+    display: block;
+}
+.latest_news a.latest_title{
+    font-style: italic;
+    color: #555555;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 300;
+}
+.latest_news a.read_more{
+    font-size: 14px;
+    margin-top: 8px;
+    text-decoration: underline;
+}
+
+/* Awards */
+.awards{
+	background: #899914 url(images/bkg-awards.jpg) no-repeat center center;
+	/*background-size: cover;*/
+	min-height: 252px;
+	padding-top: 57px;
+	color: #fff;
+}
+.awards h3{
+	background: rgb(210,216,171) transparent;
+	background: rgba(210,216,171, 0.8);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#AAFFFFFF, endColorstr=#AAFFFFFF);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99FFFFFF, endColorstr=#99FFFFFF)";
+	display: inline-block;
+	padding: 8px 10px 6px 10px;
+	color: #7F8E11;
+	font-size: 15px;
+	margin: 0;
+	line-height: 16px;
+	text-transform: uppercase;
+	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	position: relative;
+}
+.awards h3:before{
+    content: "";
+    border:1.5em solid rgb(210,216,171) transparent;
+    border: 15px solid rgba(210,216,171, 0.8);
+    border-right-color:transparent;
+	
+    /* height: 8px; */
+    /* float: right; */
+    margin-right: -30px;
+    margin-top: -8px;
+    /* height: 29px; */
+    box-sizing: content-box;
+    position: absolute;
+    right: 0;
+}
+.awards h4{
+	font-weight: 100;
+	font-size: 26px;
+	margin-top: 23px;
+}
+.awards .award-icon{
+	text-align: center;
+	height: 100%;
+}
+.awards .award-icon table{
+	height: 130px;
+	border: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.awards .award-icon td {
+   vertical-align: middle;
+   text-align: center;
+   border: none;
+}
+.awards .award-icon img{
+	max-width: 95%;
+	height: auto;
+	vertical-align: middle;
+}
+.awards .award-desc{
+	color: #fbffe2;
+	font-size: 15px;
+	line-height: 19px;
+	font-weight: 300;
+}
+.our-clients #logo-scroller li{
+	text-align: center;
+	display: table;
+	background: #f2f6f7;
+	margin: 15px;
+	border: 1px solid #d8dbdc;
+	height: 180px;
+	width: 180px;
+}
+.our-clients{
+	background: #ecf0f1;
+	padding-top: 29px;
+	text-align: center;
+	overflow: hidden;
+	padding-bottom: 62px;
+	font-size: 18px;
+	color: #626262;
+	font-weight: 300;
+}
+.our-clients h3{
+	font-weight: bold;
+	font-size: 26px;
+	color: #054b6f;
+	margin-bottom: 6px;
+}
+.our-clients .sub-title{
+	font-size: 18px;
+	color: #626262;
+	font-weight: 300;
+}
+.our-clients #logo-scroller li a{
+	display: block;
+	margin: 0 auto;
+	display: table-cell;
+	vertical-align: middle;
+}
+.our-clients #logo-scroller li img{
+	max-width: 79%;
+	height: auto;
 }
 /**
  * 6.1 Post Thumbnail
@@ -1735,6 +1890,187 @@ a.post-thumbnail:hover {
 .gallery-columns-9 .gallery-caption {
 	display: none;
 }
+/*
+ * simplyScroll 2 - a scroll-tastic jQuery plugin
+ *
+ * http://logicbox.net/jquery/simplyscroll
+ *
+ * Copyright (c) 2009-2012 Will Kelly - http://logicbox.net
+ *
+ * Dual licensed under the MIT and GPL licenses.
+ *
+ * Last revised: 31/01/2012
+ *
+ */
+
+/* Default/Master classes 
+
+Example markup format (for horizontal scroller)
+Note all DIVs are generated and should not be hard-coded
+
+<div class="your-custom-class simply-scroll-container">
+	<div class="simply-scroll-btn simply-scroll-btn-left"></div>
+	<div class="simply-scroll-btn simply-scroll-btn-right"></div>
+	<div class="simply-scroll-clip">
+		<ul class="simply-scroll-list">
+			<li>...</li>
+			...
+		</ul>
+	</div>
+</div>
+
+
+*/
+
+.simply-scroll-container { /* Container DIV - automatically generated */
+	position: relative;
+}
+
+	.simply-scroll-clip { /* Clip DIV - automatically generated */
+		position: relative;
+		overflow: hidden;
+	}
+
+	.simply-scroll-list { /* UL/OL/DIV - the element that simplyScroll is inited on */
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	
+		.simply-scroll-list li {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+	
+		.simply-scroll-list li img {
+			border: none;
+			display: block;
+			margin: 0 auto;
+		}
+	
+	.simply-scroll-btn {
+		position: absolute;
+		background-image: url(buttons.png);
+		width: 42px;
+		height: 44px;
+		z-index:3;
+		cursor: pointer;
+	}
+	
+	.simply-scroll-btn-left {
+		left: 6px;
+		bottom: 6px;
+		background-position: 0 -44px;
+	}
+	.simply-scroll-btn-left.disabled {
+		background-position: 0 0 !important;
+	}
+	.simply-scroll-btn-left:hover, .simply-scroll-btn-left:focus {
+		background-position: 0 -88px;
+	}
+	
+	.simply-scroll-btn-right {
+		right: 6px;
+		bottom: 6px;
+		background-position: -84px -44px;
+	}
+	.simply-scroll-btn-right.disabled {
+		background-position: -84px 0 !important;
+	}
+	.simply-scroll-btn-right:hover, .simply-scroll-btn-right:focus {
+		background-position: -84px -88px;
+	}
+	
+	.simply-scroll-btn-up {
+		right: 6px;
+		top: 6px;
+		background-position: -126px -44px;
+	}
+	.simply-scroll-btn-up.disabled {
+		background-position: -126px 0 !important;
+	}
+	.simply-scroll-btn-up:hover, .simply-scroll-btn-up:focus {
+		background-position: -126px -88px;
+	}
+	
+	.simply-scroll-btn-down {
+		right: 6px;
+		bottom: 6px;
+		background-position: -42px -44px;
+	}
+	.simply-scroll-btn-down.disabled {
+		background-position: -42px 0 !important;
+	}
+	.simply-scroll-btn-down:hover, .simply-scroll-btn-down:focus {
+		background-position: -42px -88px;
+	}
+	
+	.simply-scroll-btn-pause {
+		right: 6px;
+		bottom: 6px;
+		background-position: -168px -44px;
+	}
+	.simply-scroll-btn-pause:hover, .simply-scroll-btn-pause:focus {
+		background-position: -168px -88px;
+	}
+	
+	.simply-scroll-btn-pause.active {
+		background-position: -84px -44px;
+	}
+	.simply-scroll-btn-pause.active:hover, .simply-scroll-btn-pause.active:focus {
+		background-position: -84px -88px;
+	}
+
+/* Custom class modifications - override classees
+
+.simply-scroll is default
+
+*/
+
+.simply-scroll { /* Customisable base class for style override DIV */
+	width: 100%;
+	height: 200px;
+	margin-bottom: 64px;
+	margin-top: 32px;
+	overflow: hidden;
+}
+
+	.simply-scroll .simply-scroll-clip {
+		width: 100%;
+		height: 200px;
+	}
+	
+		.simply-scroll .simply-scroll-list {}
+		
+		.simply-scroll .simply-scroll-list li {
+			float: left;
+			width: 290px;
+			height: 200px;
+		}
+		.simply-scroll .simply-scroll-list li img {}
+	
+	.simply-scroll .simply-scroll-btn {}
+	
+	.simply-scroll .simply-scroll-btn-left {}
+	.simply-scroll .simply-scroll-btn-left.disabled {}
+	.simply-scroll .simply-scroll-btn-left:hover {}
+	
+	.simply-scroll .simply-scroll-btn-right {}
+	.simply-scroll .simply-scroll-btn-right.disabled {}
+	.simply-scroll .simply-scroll-btn-right:hover {}
+	
+	.simply-scroll .simply-scroll-btn-up {}
+	.simply-scroll .simply-scroll-btn-up.disabled {}
+	.simply-scroll .simply-scroll-btn-up:hover {}
+	
+	.simply-scroll .simply-scroll-btn-down {}
+	.simply-scroll .simply-scroll-btn-down.disabled {}
+	.simply-scroll .simply-scroll-btn-down:hover {}
+	
+
+
 
 
 /**
@@ -2920,37 +3256,109 @@ a.post-thumbnail:hover {
 #supplementary {
 	padding: 0 10px;
 }
-
 .site-footer,
 .site-info,
 .site-info a {
-	color: rgba(255, 255, 255, 0.7);
+	color: #7f8c8d;
 }
-
 .site-footer {
-	background-color: #000;
-	font-size: 12px;
+	background-color: #fff;
+	font-size: 14px;
 	position: relative;
 	z-index: 3;
+	color: #7f8c8d;
+	padding: 54px 0 25px;
 }
-
-.footer-sidebar {
-	padding-top: 48px;
+.site-footer .footer-wrapper{
+	margin: 0px;
+	min-height: 273px;
 }
-
-.site-info {
-	padding: 15px 10px;
+.site-footer a{
+	color: #7f8c8d;
 }
-
-#supplementary + .site-info {
-	border-top: 1px solid rgba(255, 255, 255, 0.2);
+.site-footer span.glyphicon{
+	color: #0a303d;
 }
-
-.site-info a:hover {
-	color: #41a62a;
+.site-footer h3{
+	color: #082630;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	margin-top: 0;
 }
-
-
+.site-footer .cma-locations,
+.site-footer .cma-quick-links,
+.site-footer .social-media,
+.site-footer .cma-from-blog{
+	min-height: 273px;
+}
+.site-footer .cma-locations .footer-wrapper {
+	line-height: 33px;
+	border-bottom: 5px solid #c1c987;
+}
+.site-footer .cma-locations span{
+	margin-right: 10px;
+}
+.site-footer .cma-quick-links .footer-wrapper{
+	border-bottom: 5px solid #8fcadd;
+}
+.site-footer .footer-menu {
+	margin: 0;
+	padding: 0;
+}
+.site-footer .footer-menu li{
+	list-style: none;
+	float: left;
+	width: 45%;
+	font-size: 11px;
+	margin-right: 5%;
+	margin-bottom: 11px;
+}
+.site-footer .social-media .footer-wrapper{
+	border-bottom: 5px solid #84979e;
+}
+.site-footer .social-media{
+	font-size: 12px;
+}
+.site-footer .social-media span{
+	border-radius: 100%;
+	padding: 5px;
+	display: inline-block;
+	color: #fff;
+	float: left;
+	margin-right: 5px;
+	width: 32px;
+	height: 32px;
+	font-size: 22px;
+}
+.site-footer .social-media span.genericon-facebook-alt{background: #3b5998;}
+.site-footer .social-media span.genericon-twitter{background: #2daae1;}
+.site-footer .social-media span.genericon-youtube{background: #ff3132;}
+.site-footer .social-media span.genericon-linkedin{background: #0073b2;}
+.site-footer .social-media span.genericon-feed{background: #f2861d;}
+.site-footer .social-media span:hover{
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1);
+	-webkit-transition: .4s all ease-in-out;
+	-moz-transition: .4s all ease-in-out;
+	-ms-transition: .4s all ease-in-out;
+	-o-transition: .4s all ease-in-out;
+	transition: .4s all ease-in-out;
+}
+.site-footer .social-media a:hover{
+	text-decoration: none;
+}
+.site-footer .cma-from-blog .footer-wrapper{
+	border-bottom: 5px solid #cad2d2;
+}
+.site-footer svg{
+	width: 100px;
+	height: 60px;
+}
 /**
  * 9.0 Featured Content
  * -----------------------------------------------------------------------------
