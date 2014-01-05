@@ -107,7 +107,7 @@
 							<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
 								<h1 class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></h1>
 								<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
-								<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+								<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu','walker'=> new cma_walker_nav_menu() ) ); ?>
 							</nav>
 						</div><!-- /.col-md-24 col-sm-20 -->
 						<div class="visible-sm col-sm-4">

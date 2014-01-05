@@ -67,19 +67,26 @@
 							
 							$loop = new WP_Query( $args );
 							while($loop->have_posts()): $loop->the_post(); ?>
-							
-								<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-							
+								<div class="from-blog-post">
+									<?php 
+										if ( has_post_thumbnail() ) {
+										the_post_thumbnail();
+									} else { ?>
+										<img src="<?php bloginfo('template_directory'); ?>/images/cma-featured-image.jpg" alt="CMA Technology Solutions"/>
+									<?php } ?>
+									<a href="<?php the_permalink() ?>"><?php $string = get_the_title(); 
+										echo(strlen($string) > 55) ? substr($string,0,55).'...' : $string; ?><br><span>Continue Reading</span></a>									
+								</div><!-- /.from-blog-post -->
 							<?php endwhile; wp_reset_postdata(); ?>
 						</div><!-- /.footer-wrapper -->
 					</div><!-- .col-xs-24 col-sm-8 -->
 				</div><!-- .row -->
 				<br><br>
 				<div class="row">
-					<div class="col-xs-20">
+					<div class="col-xs-20 credits">
 						© 2013 CMA Technology Solutions. All Rights Reserved.
 					</div><!-- .col-xs-20 -->
-					<div class="col-xs-4">
+					<div class="col-xs-4 cma-footer-svg">
 						<svg class="hide-IE" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 								 viewBox="0 0 337.235 201.253" enable-background="new 0 0 337.235 201.253"
 								 xml:space="preserve">
