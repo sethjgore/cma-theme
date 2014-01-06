@@ -817,6 +817,7 @@ span + .edit-link:before,
 	padding: 0px 15px;
 	margin: 0 auto;
 	width: 100%;
+	/* overflow: hidden; */
 }
 
 /**
@@ -1557,6 +1558,142 @@ a.post-thumbnail:hover {
 	padding: 34px 0 47px;
 	line-height: 31px;
 }
+.bkg-customer-story{
+	position: absolute;
+   left: 50%;
+   width: 1200px;
+   height: 276px;
+   margin-left: -600px; /* Half the width */
+	/* overflow: hidden; */
+	max-width: 113%;
+}
+.intro-ribbon{
+	background: #00476c;
+	color: #fff;	
+	padding: 25px 30px 17px;
+	min-height: 307px;
+}
+.intro-ribbon h1{
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 5px;
+}
+.intro-ribbon h3{
+	font-size: 36px;
+	font-weight: 100;
+	margin: 0;
+	padding: 0;
+	letter-spacing: -2px;
+}
+.cs-logo{
+	text-align: center;
+	padding-top: 70px;
+}
+.cs-logo img{
+	max-width: 100%;
+}
+.cs-summary{
+	margin-top: 7px;
+	font-size: 14px;
+	color: #7f8c8d;
+	line-height: 20px;
+}
+.cs-summary h2{
+	font-weight: 300;
+	font-size: 30px;
+	color: #00476c;
+	margin-bottom: 20px;
+}
+.cs-quote{
+	border-top: 3px solid #d9e4e9;
+	border-bottom: 3px solid #d9e4e9;
+	padding: 27px 0 28px 39px;
+	background: url(images/bkg-quote.png) no-repeat 0% 20px; 
+	color: #1f95bc;
+	font-style: italic;
+	font-size: 18px;
+}
+.cs-quote p{
+	margin-bottom: 10px;
+}
+.cs-quote span{
+	font-size: 10px;
+	text-transform: uppercase;
+	color: #a7afb0;
+	font-style: normal;
+}
+.cs-notables{
+	margin-top: 45px;
+}
+.cs-notables svg{
+	height: 47px;
+	width: 10%;
+	float: left;
+}
+.cs-outcome{
+	float: right;
+	width: 86%;
+	font-size: 30px;
+	font-weight: bold;
+	color: #1f95bc;
+	line-height: 30px;
+	overflow: hidden;
+}
+.cs-outcome span{
+	font-size: 14px;
+	font-style: italic;
+	display: block;
+	font-weight: 400;
+	line-height: 25px;
+}
+.cs-outcome:after{
+	clear: both;
+}
+.cs-featured-outcome{
+	overflow: hidden;
+}
+.side-box{
+	border: 3px solid #d9e4e9;
+	background: url(images/bkg-boxes.png) repeat center center;
+	min-height: 200px;
+	clear: both;
+	margin-top: 29px;
+}
+.side-box .box-title{
+	background: #00476c;
+	text-transform: uppercase;
+	margin-left: -27px;
+	padding-left: 32px;
+	color: #fff;
+	width: 110%;
+	margin-top: 12px;
+	font-size: 14px;
+	padding: 5px 0 5px 32px;
+}
+.side-box .box-title span{
+	text-transform: none;
+}
+.ribbon {
+  position: relative;
+  line-height: 2em;
+}
+.ribbon:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  border-top: solid 19px transparent;
+  border-bottom: solid 19px transparent;
+}
+.ribbon:before {
+  left: 0;
+  border-left: solid 0.70313em #fff;
+}
+
 /**
  * 6.3 Entry Meta
  * -----------------------------------------------------------------------------
@@ -3968,7 +4105,9 @@ Note all DIVs are generated and should not be hard-coded
 
 	.full-width .site-content {
 		margin-right: 0;
-	}
+	
+		/* overflow: hidden; */
+}
 
 	.full-width .site-content .has-post-thumbnail .entry-header,
 	.full-width.singular .site-content .hentry.has-post-thumbnail {
