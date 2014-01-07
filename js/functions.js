@@ -79,5 +79,14 @@
     	e.preventDefault();
     });
 	
+	if($('.cs-summary').length > 0){
+		if($('.cs-summary').height() > $('.cs-notables').height()){ 
+			$('.cs-notables').height($('.cs-summary').height()); 
+		} else {
+			$('.cs-summary').height($('.cs-notables').height()); 
+		}
+		jQuery('.related_stories').css({'position':'absolute','border-bottom':0,'width':'94%'});
+	}
 	
 } )( jQuery );
+

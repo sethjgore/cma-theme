@@ -698,3 +698,39 @@ function customer_stories_init() {
   register_post_type( 'customer_stories', $args );
 }
 add_action( 'init', 'customer_stories_init' );
+
+function cma_partners_init() {
+  $labels = array(
+    'name'               => 'Partners',
+    'singular_name'      => 'Partner',
+    'add_new'            => 'Add New',
+    'add_new_item'       => 'Add A New Partner',
+    'parent_item_colon'  => '',
+    'menu_name'          => 'Partners'
+  );
+
+  $args = array(
+    'labels'             => $labels,
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'query_var'          => true,
+    'rewrite'            => array( 'slug' => 'partners' ),
+    'capability_type'    => 'post',
+    'has_archive'        => true,
+    'hierarchical'       => false,
+    'menu_position'      => null,
+    'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+  );
+
+  register_post_type( 'partners', $args );
+}
+add_action( 'init', 'cma_partners_init' );
+
+function addhttp($url) {
+    if (!preg_match("~^(?:f|ht)tps?://~i", $url)) {
+        $url = "http://" . $url;
+    }
+    return $url;
+}

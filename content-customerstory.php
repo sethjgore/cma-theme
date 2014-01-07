@@ -66,27 +66,73 @@
 			<div class="box-title ribbon">
 				<?php the_title(); ?> <span>at a glance</span>
 			</div><!-- /.box-title -->
+				<div class="glance-desc">
+					<img src="<?php bloginfo('template_directory'); ?>/images/industry.png" alt=""/>
+					<div class="glance-text">
+					Industry:<br>
+					<span><?php the_field('industry');?></span>
+					</div>
+				</div><!-- /.glance-desc -->
+				<div class="glance-desc">
+				<img src="<?php bloginfo('template_directory'); ?>/images/headquarters.png" alt=""/>
+					<div class="glance-text">
+						Headquarters:<br>
+						<span><?php the_field('headquarters');?></span>
+					</div>
+				</div><!-- /.glance-desc -->
+				<div class="glance-desc">
+				<img src="<?php bloginfo('template_directory'); ?>/images/website.png" alt=""/>
+					<div class="glance-text">
+						Website:<br>
+						<span><a target="_blank" href="<?php echo addhttp(get_field('website'));?>"><?php the_field('website');?></a></span>
+					</div>
+				</div><!-- /.glance-desc -->
+				
 		</div><!-- /.at_glance side-box -->
 
 		<div class="cs-highlights side-box">
 			<div class="box-title ribbon">
 				Highlights <span>from this project</span>
-			</div><!-- /.box-title -->			 
+			</div><!-- /.box-title -->
+			<?php if(get_field('highlights')): ?>
+			  
+			  	<ul>
+					<?php while(has_sub_field('highlights')): ?>
+				 
+						<li><?php the_sub_field('highlight'); ?></li>						
+				 
+					<?php endwhile; ?>
+			 	</ul>
+			<?php endif; ?>
 		</div><!-- /.cs-highlights side-box -->
+		<?php if(get_field('video_link')): ?>
+			<div class="video-box">
+				<a target="_blank" href="<?php the_field('video_link'); ?>">
+					<img class="play_video_btn" src="<?php bloginfo('template_directory'); ?>/images/video_play.png" alt="Play Video"/>
+					<?php 
+						 echo wp_get_attachment_image( get_field('video_image'), "large" , false, array('class'=>'video_image'));
+					?>
+				</a>
+				<br>
+				<p><?php the_field('video_description'); ?></p>
+			</div><!-- /.video-box -->
+		<?php endif; ?>
+		<div class="clear"></div><!-- /.clear -->
+		<?php if(get_field('related_customer_stories')): ?>
+			<div class="related_stories side-box">
+				<h3>Related Customer Stories</h3>
+				<ul>
+					<?php while(has_sub_field('related_customer_stories')): ?>
+				 
+						<li><a href="<?php the_sub_field('related_story'); ?>"><?php the_sub_field('related_story_title'); ?></a></li>
+				 
+					<?php endwhile; ?>
+				</ul>
+				 
+			</div><!-- /.related_stories -->
+		<?php endif; ?>
 		</div><!-- .col-xs-24 col-sm-9 col-sm-offset-1 -->
 	</div><!-- .row -->
-	
-	<div class="entry-content">
-		<?php
-			the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyfourteen' ) );
-			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',
-				'after'       => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-			) );
-		?>
-	</div><!-- .entry-content -->
 	
 	<?php the_tags( '<footer class="entry-meta"><span class="tag-links">', '', '</span></footer>' ); ?>
 </article><!-- #post-## -->

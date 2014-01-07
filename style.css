@@ -205,6 +205,7 @@ ins {
 
 p {
 	margin-bottom: 24px;
+	font-weight: 300;
 }
 
 code,
@@ -1085,7 +1086,7 @@ span + .edit-link:before,
 }
 
 .hentry {
-	margin: 0 auto 48px;
+	margin: 0 auto 30px;
 	max-width: 672px;
 }
 
@@ -1547,15 +1548,20 @@ a.post-thumbnail:hover {
 .sidebar-menu ul{
 	list-style: none;
 }
-.featured-customer-story{
+.featured-related-content{
 	background: #ecf0f1;
+	padding-bottom: 20px;
+}
+.featured-customer-story .wrapper{
+	border-bottom: 1px solid #d8dddd;
+	padding-bottom: 61px;
 }
 .fcs-title{
 	color: #00476c;
 	font-weight: bold;
 	text-align: center;
 	font-size: 24px;
-	padding: 34px 0 47px;
+	padding: 34px 0 35px;
 	line-height: 31px;
 }
 .bkg-customer-story{
@@ -1581,18 +1587,19 @@ a.post-thumbnail:hover {
 	margin-bottom: 5px;
 }
 .intro-ribbon h3{
-	font-size: 36px;
+	font-size: 34px;
 	font-weight: 100;
 	margin: 0;
 	padding: 0;
-	letter-spacing: -2px;
+	letter-spacing: -1px;
 }
 .cs-logo{
 	text-align: center;
-	padding-top: 70px;
+	padding-top: 33px;
 }
 .cs-logo img{
 	max-width: 100%;
+	max-height: 237px;
 }
 .cs-summary{
 	margin-top: 7px;
@@ -1626,6 +1633,8 @@ a.post-thumbnail:hover {
 }
 .cs-notables{
 	margin-top: 45px;
+	height: 100%;
+	position: relative;
 }
 .cs-notables svg{
 	height: 47px;
@@ -1660,6 +1669,7 @@ a.post-thumbnail:hover {
 	min-height: 200px;
 	clear: both;
 	margin-top: 29px;
+	padding-bottom: 26px;
 }
 .side-box .box-title{
 	background: #00476c;
@@ -1670,10 +1680,13 @@ a.post-thumbnail:hover {
 	width: 110%;
 	margin-top: 12px;
 	font-size: 14px;
-	padding: 5px 0 5px 32px;
+	padding: 5px 0 5px 39px;
+	margin-bottom: 28px;
 }
 .side-box .box-title span{
 	text-transform: none;
+	font-style: italic;
+	margin-left: 2px;
 }
 .ribbon {
   position: relative;
@@ -1693,7 +1706,234 @@ a.post-thumbnail:hover {
   left: 0;
   border-left: solid 0.70313em #fff;
 }
+.at_glance .glance-desc{
+	display: block;
+	padding: 0px 0 0 32px;
+	min-height: 68px;
+}
+.at_glance .glance-desc a{
+	color: #00476c;
+}
+.at_glance .glance-desc img{
+	height: 57px;
+	width: 57px;
+	float: left;
+}
+.at_glance .glance-desc .glance-text{
+	color: #00476c;
+	font-weight: bold;
+	font-size: 14px;
+	text-transform: uppercase;
+	float: left;
+	padding-left: 17px;
+	line-height: 16px;
+	margin-top: 12px;
+}
+.at_glance .glance-desc .glance-text span{
+	font-style: italic;
+	font-weight: normal;
+	text-transform: none;
+}
 
+.cs-highlights ul{
+	margin: 0 0 0 32px;
+	padding: 0;
+}
+.cs-highlights ul li{
+	list-style: none;
+	color: #00476c;
+	text-transform: uppercase;
+	font-size: 14px;
+	list-style-image: url(images/check.png);
+	padding-left: 13px;
+	margin-bottom: 18px;
+	font-weight: bold;
+	line-height: 15px;
+}
+.cs-highlights ul li span{
+	margin-right: 5px;
+	color: #00476c;
+	text-transform: none;
+}
+.video-box{
+	margin-top: 29px;
+	font-size: 14px;
+	color: #7f8c8d;
+	line-height: 16px;
+}
+.video-box a{
+	display: block;
+	position: relative;
+}
+.video-box img.video_image{
+	width: 100%;
+	height: 171px;
+	border: 3px solid #d9e4e9;
+}
+.play_video_btn{
+	position: absolute;
+	z-index: 9999;
+	margin-top: 22%;
+	margin-left: 39%;
+}
+.video-box p{
+	padding: 0 5px;
+}
+
+.cs-action{
+	background: #1f95bc;
+	padding: 42px 0;
+	color: #fff;
+	font-size: 24px;
+	font-weight: 100;
+	text-align: center;
+}
+.cs-action a{
+	color: #1f95bc;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 50px;
+	padding: 13px 18px;
+	box-shadow: none;
+	border: none;
+}
+.cs-action a.btn-default:hover{
+	color: #34cdff;
+	background: #fefefe;
+}
+.related_stories{
+    position: static;
+    bottom: -30px;
+    width: 100%;
+    font-size: 14px;
+    min-height: 100px;
+}
+.related_stories h3{
+	color: #00476c;
+	font-weight: bold;
+	font-size: 14px;
+	margin: 0;
+	padding: 18px;
+	text-transform: uppercase;
+}
+.related_stories ul{
+    margin-left: 38px;
+
+    color: #00476c;
+}
+.related_stories ul li{}
+.related_stories ul li a{
+	color: #8a9596;
+	font-size: 14px;	
+}
+.work_with_partners{
+	margin-top: 30px;
+}
+.partner_title{
+	color: #626262;
+	font-size: 14px;
+	text-transform: uppercase;
+	text-align: center;
+	width: 100%;
+	font-weight: bold;
+	border-bottom: 2px solid #e3e3e3;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+}
+.work_with_partners ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: table;
+	border-spacing: 5px;
+}
+.work_with_partners ul li{
+	display: table-cell;
+	vertical-align: middle;
+	width: 30%;
+	border: 1px solid #c1c1c1;
+	margin-right: 3%;
+	text-align: center;
+}
+.work_with_partners ul li img{
+	width: 100%;
+	height: auto;
+	vertical-align: middle;
+	margin: 0 auto;
+	display: table-cell;
+	padding: 5%;
+}
+.featured-cs-image{
+	-webkit-border-radius: 50%;	
+	-moz-border-radius: 50%;	
+	border-radius: 50%;	
+	max-width: 100%;
+	height: auto;
+	border: 4px solid #00476c;
+}
+.featured-cs-quote{
+	background: url(images/bkg-quote-cs.png) no-repeat 0 0%;
+	padding-left: 47px;
+	padding-top: 10px;
+	font-size: 18px;
+	font-weight: 100;
+	line-height: 26px;
+}
+.featured-cs-quote .author{
+	font-size: 16px;
+	font-weight: bold;
+	color: #00476c;
+	text-transform: uppercase;
+	margin-top: 8px;
+	/* line-height: 20px; */
+}
+.featured-cs-quote .title{
+	color: #1f95bc;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 13px;
+}
+.featured-cs-link{
+	padding-top: 10px;
+}
+.featured-cs-link svg{
+	background: #1f95bc;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	border: 6px solid #8fcadd;
+	width: 45px;
+	height: 45px;
+	padding: 6px;
+	float: left;
+}
+.featured-cs-link a{
+	color: #fff;
+	font-size: 10px;
+	background: #86c3d7;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 7px;
+	text-align: right;
+	padding: 6px 0;
+	margin: 10px 0 0 8px;
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	width: 102%;
+}
+.related-blog-title{
+	font-size: 18px;
+	color: #00476c;
+	font-weight: bold;
+}
+.related-blog-post{
+	background: #f1f6f7;
+	border: 1px solid #d8dbdc;
+	padding: 10px;
+}
 /**
  * 6.3 Entry Meta
  * -----------------------------------------------------------------------------
@@ -3471,12 +3711,16 @@ Note all DIVs are generated and should not be hard-coded
 	color: #7f8c8d;
 }
 .site-footer {
+	background-color: #ecf0f1;
 	background-color: #fff;
 	font-size: 14px;
 	position: relative;
 	z-index: 3;
 	color: #7f8c8d;
 	padding: 54px 0 25px;
+}
+.home.page .site-footer{
+	background: #fff;
 }
 .site-footer .footer-wrapper{
 	margin: 0px;
