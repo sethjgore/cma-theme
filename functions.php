@@ -181,7 +181,7 @@ function twentyfourteen_widgets_init() {
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
-	
+
 }
 add_action( 'widgets_init', 'twentyfourteen_widgets_init' );
 
@@ -528,7 +528,7 @@ if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow
  /*
 *  Change the Options Page menu to 'Theme Options'
 */
- 
+
 if( function_exists('acf_set_options_page_title') )
 {
     acf_set_options_page_title( __('Footer') );
@@ -755,7 +755,65 @@ function cma_testimonial_init() {
 
   register_post_type( 'testimonials', $args );
 }
-add_action( 'init', 'cma_testimonial_init' );
+add_action( 'init', 'cma_events_init' );
+
+function cma_newsandevents_init() {
+  $labels = array(
+    'name'               => 'News & Events',
+    'singular_name'      => 'News & Event',
+    'add_new'            => 'Add New',
+    'add_new_item'       => 'Add news or a new event',
+    'parent_item_colon'  => '',
+    'menu_name'          => 'News & Events'
+  );
+
+  $args = array(
+    'labels'             => $labels,
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'query_var'          => true,
+    'rewrite'            => array( 'slug' => 'newsandevents' ),
+    'capability_type'    => 'post',
+    'has_archive'        => true,
+    'hierarchical'       => false,
+    'menu_position'      => null,
+    'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments')
+  );
+
+  register_post_type( 'newsandevents', $args );
+}
+add_action( 'init', 'cma_newsandevents_init' );
+
+function cma_community_init() {
+  $labels = array(
+    'name'               => 'Community',
+    'singular_name'      => 'Community',
+    'add_new'            => 'Add New',
+    'add_new_item'       => 'Add Community News',
+    'parent_item_colon'  => '',
+    'menu_name'          => 'Community'
+  );
+
+  $args = array(
+    'labels'             => $labels,
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'query_var'          => true,
+    'rewrite'            => array( 'slug' => 'community' ),
+    'capability_type'    => 'post',
+    'has_archive'        => true,
+    'hierarchical'       => false,
+    'menu_position'      => null,
+    'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+  );
+
+  register_post_type( 'community', $args );
+}
+add_action( 'init', 'cma_community_init' );
 
 
 function addhttp($url) {
