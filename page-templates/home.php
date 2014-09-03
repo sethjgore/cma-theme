@@ -13,19 +13,10 @@ get_header(); ?>
 			<?php
 				// Start the Loop.
 				while ( have_posts() ) : the_post(); ?>
-
-					<div class="hp_slider cycle-slideshow" 
-					data-cycle-pause-on-hover="true" 
-    				data-cycle-speed="1500" 
-    				data-cycle-delay="5000" 
-    				data-cycle-prev="#slide_prev" 
-    				data-cycle-next="#slide_next" 
-    				data-cycle-slides="> div" 
-    				data-cycle-swipe=true 
-    				data-cycle-log=false>
-    				
-						<a href=# id="slide_prev">
-							<svg version="1.1" id="All_glyphs" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        
+					<div class="hp_slider">
+							<a href=# id="slide_prev">
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 								 width="100.831px" height="100.83px" viewBox="0 0 100.831 100.83" enable-background="new 0 0 100.831 100.83"
 								 xml:space="preserve">
 							<path class="slider_arrow" d="M52.941,30.246c-1.521,1.484-16.393,17.097-16.393,17.097c-0.811,0.793-1.217,1.83-1.217,2.869
@@ -36,7 +27,7 @@ get_header(); ?>
 							</svg>
 						</a> 
     					<a href=# id="slide_next">
-							<svg version="1.1" id="All_glyphs" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 								 width="100.831px" height="100.83px" viewBox="0 0 100.831 100.83" enable-background="new 0 0 100.831 100.83"
 								 xml:space="preserve">
 							<path class="slider_arrow" d="M47.479,70.179C49,68.694,63.872,53.082,63.872,53.082c0.811-0.793,1.217-1.83,1.217-2.869c0-1.04-0.407-2.078-1.217-2.869
@@ -45,6 +36,9 @@ get_header(); ?>
 							<circle class="slider_circle" fill="none" stroke-width="10" cx="50.415" cy="50.415" r="44.915"/>
 							</svg>
     					</a>
+
+              <div class="cycle-slideshow">
+    				
 						<?php
 						$i = 1;
 						while(has_sub_field("hp_sliders")): ?>
@@ -53,48 +47,79 @@ get_header(); ?>
 						 	
 						 		<?php  
 					 			$bkg_img_full = wp_get_attachment_image_src( get_sub_field('bkg_image'), "full"); 
-					 			$bkg_img_md = wp_get_attachment_image_src( get_sub_field('bkg_image'), "medium"); 
+					 			$bkg_img_md = wp_get_attachment_image_src( get_sub_field('bkg_image'), "thumbnail"); 
 					 		?>
-					 		<style scoped>  
-					      		/* Small devices (tablets, 768px and up) */
-								@media (max-width: 768px) { 
-									.slide_<?php echo $i; ?>{
-										background: url(<?php echo $bkg_img_md[0]; ?>) no-repeat center center;
-										background-size: cover;
-									}
-								}
-								@media (min-width: 767px) { 
-									.slide_<?php echo $i; ?>{
-										background: url(<?php echo $bkg_img_full[0]; ?>) no-repeat center center;
-										background-size: cover;
-									}
-								}
-				    		</style>
-
+					 
 								<div class="slide slide_<?php echo $i; ?>" <?php if($i>1) echo ' style="display:none;"'; ?>>
-									<h3><?php the_sub_field("title"); ?></h3>
-									<h4><?php the_sub_field("quote"); ?></h4><br>
+  								<style scoped>  
+  					      		/* Small devices (tablets, 768px and up) */
+  								@media (max-width: 768px) { 
+  									.slide_<?php echo $i; ?>{
+  										background: url(<?php echo $bkg_img_md[0]; ?>) no-repeat center center;
+  										background-size: cover;
+  									}
+  								}
+  								@media (min-width: 767px) { 
+  									.slide_<?php echo $i; ?>{
+  										background: url(<?php echo $bkg_img_full[0]; ?>) no-repeat center center;
+  										background-size: cover;
+  									}
+  								}
+  				    		</style>
+									<h3 ><?php the_sub_field("title"); ?></h3>
+									<h4 ><?php the_sub_field("quote"); ?></h4><br>
 									<div class="author_name">
 										<?php the_sub_field("author_name"); ?>
 									</div><!-- /.author_name --> 
 									<div class="author_title">
-										<?php the_sub_field("author_title"); ?>
+										<?php echo esc_html( get_sub_field("author_title")); ?>
 									</div><!-- /.author_title -->
 									
-									<a class="btn btn-1 btn-primary" href="<?php the_sub_field('button_1_link'); ?>"><?php the_sub_field("button_1_text"); ?></a>
-									<a class="btn btn-2 btn-success" href="<?php the_sub_field('button_2_link'); ?>"><?php the_sub_field("button_2_text"); ?></a>
+									<?php if(get_sub_field('button_1_text')): ?>
+									  <a class="btn btn-1 btn-primary" href="<?php the_sub_field('button_1_link'); ?>"><?php the_sub_field("button_1_text"); ?></a>
+								  <?php endif; ?>
+								  <?php if(get_sub_field('button_2_text')): ?>
+									  <a class="btn btn-2 btn-success" href="<?php the_sub_field('button_2_link'); ?>"><?php the_sub_field("button_2_text"); ?></a>
+								  <?php endif; ?>
 								</div>
 						 
 							<?php elseif(get_row_layout() == "custom_slider"): // layout: Custom Slider ?>
-						 		
+							
+							  <?php  
+					 			$bkg_img_full = wp_get_attachment_image_src( get_sub_field('bkg_image'), "full"); 
+					 			if(get_sub_field('mobile_image')){
+  					 			$bkg_img_md = wp_get_attachment_image_src( get_sub_field('mobile_image'), "large");
+					 			} else {
+  					 			$bkg_img_md = wp_get_attachment_image_src( get_sub_field('bkg_image'), "large"); 
+					 			}
+					 			 
+					 			
+                 ?>
+					 		
 						 		<div class="slide slide_<?php echo $i; ?>" <?php if($i>1) echo ' style="display:none;"'; ?>>
+						 		<style scoped>  
+  					      		/* Small devices (tablets, 768px and up) */
+  								@media (max-width: 768px) { 
+  									.slide_<?php echo $i; ?>{
+  										background: url(<?php echo $bkg_img_md[0]; ?>) no-repeat center center;
+  										background-size: cover;
+  									}
+  								}
+  								@media (min-width: 767px) { 
+  									.slide_<?php echo $i; ?>{
+  										background: url(<?php echo $bkg_img_full[0]; ?>) no-repeat center center;
+  										background-size: cover;
+  									}
+  								}
+  				    		</style>
 									<?php the_sub_field("slider_html"); ?>
 								</div>
 						 
 							<?php endif; ?>
 						 	<?php $i++; ?>
 						<?php endwhile; ?>
-					
+						
+					</div><!-- /.cycle slideshow -->
 					</div><!-- /.slider -->
 
 					<div class="wrapper mission-statement">
@@ -112,7 +137,7 @@ get_header(); ?>
 									 	<div class="col-xs-24 col-sm-8 section_link">	
 											<h3><a href="<?php the_sub_field('page_link')?>"><?php the_sub_field('title')?></a></h3>
 											<a class="sec_image" href="<?php the_sub_field('page_link')?>"><?php echo wp_get_attachment_image( get_sub_field('image'), "large" , false, array('class'=>'section_links_img')); ?></a><br>
-											<h4><?php the_sub_field('text')?></h4>
+											<h4><?php echo strip_tags(get_sub_field('text'),'<a>'); ?></h4>
 									 	</div><!-- .col-sm-24 col-md-8 -->
 
 									<?php endwhile; ?>
@@ -128,7 +153,7 @@ get_header(); ?>
 								<div class="col-xs-24">
 									<img class="news_arc" src="<?php bloginfo('template_directory'); ?>/images/bkg_news.png" alt="">
 									<h3>News</h3>
-									<svg enable-background="new 0 0 40 40" viewBox="0 0 40 40" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><g id="background"><rect fill="none" height="32" width="32"/></g><g id="news_1_"><path fill="#bdc3c7" d="M4,14h20v-2H4V14z M15,26h7v-2h-7V26z M15,22h9v-2h-9V22z M15,18h9v-2h-9V18z M4,26h9V16H4V26z M28,10V6H0v22c0,0,0,4,4,4   h25c0,0,3-0.062,3-4V10H28z M4,30c-2,0-2-2-2-2V8h24v20c0,0.921,0.284,1.558,0.676,2H4z"/></g></svg>
+									<svg enable-background="new 0 0 40 40" viewBox="0 0 40 40" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><g id="background"><rect fill="none" height="32" width="32"/></g><g id="news_1_"><path fill="#bdc3c7" d="M4,14h20v-2H4V14z M15,26h7v-2h-7V26z M15,22h9v-2h-9V22z M15,18h9v-2h-9V18z M4,26h9V16H4V26z M28,10V6H0v22c0,0,0,4,4,4   h25c0,0,3-0.062,3-4V10H28z M4,30c-2,0-2-2-2-2V8h24v20c0,0.921,0.284,1.558,0.676,2H4z"/></g></svg>
 									<?php
 									$args=array(
 									  'post_type' => 'post',
@@ -152,15 +177,7 @@ get_header(); ?>
 						<div class="wrapper">
 							<?php if(get_field('awards')): ?>
 							  	<?php $i=1; ?>
-							  	<div class="award_slider cycle-slideshow" 
-									data-cycle-pause-on-hover="true" 
-				    				data-cycle-speed="500" 
-				    				data-cycle-timeout="4000" 
-				    				data-cycle-prev="#awrad_prev" 
-				    				data-cycle-next="#awardslide_next" 
-				    				data-cycle-slides="> div" 
-				    				data-cycle-swipe=true 
-				    				data-cycle-log=false>
+							  	<div class="award_slider cycle-slideshow">
 								<?php while(has_sub_field('awards')): ?>
 							 
 									<div class="row" <?php if($i>1) echo 'style="display:none;"' ?>>
@@ -192,10 +209,12 @@ get_header(); ?>
 
 					<div class="our-clients">
 						<div class="wrapper">
-							<h3>We work with great brands to improve their business technology</h3>
-							<div class="sub-title">
+							<h3><img src="<?php bloginfo('template_directory'); ?>/images/CMA-30th-Anniversary.png" alt="CMA 30th Anniversity Logo"/><span><?php the_field('client_logos_title'); ?></span><img class="second-icon" src="<?php bloginfo('template_directory'); ?>/images/CMA-30th-Anniversary.png" alt="CMA 30th Anniversity Logo"/></h3>
+							<!--
+              <div class="sub-title">
 								Here are a few of the incredible brands that we have partnered with to support their business.
-							</div><!-- /.sub-title -->
+							</div>
+              --><!-- /.sub-title -->
 						</div><!-- /.wrapper -->
 						<?php if(get_field('client_logos')): ?>
 							  	
@@ -210,10 +229,13 @@ get_header(); ?>
 						 	</ul><!-- /.logo-scroller -->
 						<?php endif; ?>
 							
-						<div class="wrapper">
-							Want to join the team? <a href="">Contact us today!</a>
-						</div><!-- /.wrapper -->
 					</div><!-- /.our-clients -->
+					
+					<div class="public-sector">
+						<div class="wrapper">
+							<a href="<?php echo site_url(); ?>/public-sector-contract-participation">CMA public sector contract participation<img src="<?php bloginfo('template_directory'); ?>/images/cma-public-sector.png" alt="CMA participates in Public Sector Contracts in Lounisiana, Mississippi, and Alabama"/></a>
+						</div><!-- .wrapper -->
+					</div><!-- .public-sector -->
 				<?php
 			
 				endwhile;

@@ -1,14 +1,6 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other 'pages' on your WordPress site will use a different template.
- *
- * @package WordPress
- * @subpackage Twenty_Fourteen
- * @since Twenty Fourteen 1.0
+ * Template Name: Partners
  */
 
 get_header(); ?>
@@ -32,7 +24,7 @@ get_header(); ?>
 						<?php
 
 							// Include the page content template.
-							get_template_part( 'content', 'page' );
+							get_template_part( 'content', 'partners' );
 
 
 						?>
@@ -242,10 +234,10 @@ get_header(); ?>
 						</div><!-- /.fcs-title -->
 						
 						<div class="row">
-							<div class="col-xs-24 col-sm-6">
+							<div class="col-xs-6">
 								<?php  echo wp_get_attachment_image( get_field('featured_cs_image'), "meduim" , false, array('class'=>'featured-cs-image')); ?>
 							</div><!-- .col-xs-6 -->
-							<div class="col-xs-24 col-sm-13 featured-cs-quote">
+							<div class="col-xs-13 featured-cs-quote">
 								<?php the_field('featured_cs_quote'); ?>
 								<div class="author">
 									<?php the_field('featured_cs_author'); ?>
@@ -254,7 +246,7 @@ get_header(); ?>
 									<?php the_field('featured_cs_author_title'); ?>
 								</div><!-- /.title -->
 							</div><!-- .col-xs-13 -->
-							<div class="col-xs-24 col-sm-4 pull-right featured-cs-link">
+							<div class="col-xs-4 pull-right featured-cs-link">
 								<svg version="1.1" id="All_glyphs" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 									  viewBox="0 0 70 96.737" enable-background="new 0 0 70 96.737" xml:space="preserve">
 								<path fill="#ffffff" d="M68.243,24.082L23.249,0.89C17.088-2.357,4.936,3.916,1.445,9.436c-1.56,2.466-1.443,4.249-1.443,5.256l0.554,52.373
@@ -274,20 +266,7 @@ get_header(); ?>
 			<?php endif; ?>
 			
 			<?php $cats = get_field('related_blog_post_category');
-			$cat_list = '';
-			if($cats){
-				foreach($cats as $cat){
-					$cat_list .= $cat . ',';
-				}
-			}
-			$args=array(
-			  'post_type' => 'post',
-			  'posts_per_page' => get_field('number_of_related_blogs'),
-			  'cat' => rtrim($cat_list, ','),
-			);
-			$i=1;
-			$loop = new WP_Query( $args );
-			if($cats != '' && $loop->post_count>0): ?>
+			if($cats != ''): ?>
 			<div class="related-blog-posts">
 				<div class="wrapper">
 					<div class="row">
@@ -296,8 +275,19 @@ get_header(); ?>
 						</div><!-- .col-xs-24 col-sm-5 -->
 						<div class="col-xs-24 col-sm-19">
 								<?php
-								$rss=get_post_meta($post->ID, "RSS_Feed", true); 
-								if(!$rss) {
+								$cat_list = '';
+								if($cats){
+									foreach($cats as $cat){
+										$cat_list .= $cat . ',';
+									}
+								}
+								$args=array(
+								  'post_type' => 'post',
+								  'posts_per_page' => get_field('number_of_related_blogs'),
+								  'cat' => rtrim($cat_list, ','),
+								);
+								$i=1;
+								$loop = new WP_Query( $args );
 								while($loop->have_posts()): $loop->the_post(); ?>
 									
 									<div class="related-blog-post <?php if( $i%2 == 0) echo 'pull-right'; ?>">
@@ -313,20 +303,7 @@ get_header(); ?>
 								<?php
 									$i++;
 									endwhile;
-									}
-									else { ?>
-                                    <div class="hubspot-posts">
-                              
-                                    <?php
-										$rss_html=htmlspecialchars_decode(do_shortcode('[rss feed="'.$rss.'" num="5" excerpt="true"]')); 
-								$rss_html=preg_replace("/<img[^>]+\>/i", "(image) ", $rss_html);
-								$rss_html=str_replace('(image)','',$rss_html); 
-								$rss_html=str_replace('<br>','',$rss_html); 
-								echo($rss_html);
-										
-									}
 									wp_reset_postdata(); ?>
-                                    </div>
 						</div><!-- .col-xs-24 col-sm-19 -->
 					</div><!-- .row -->
 				</div><!-- /.wrapper -->
@@ -338,13 +315,6 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 </div><!-- #main-content -->
-<script type="text/javascript">
-jQuery('.related-blog-posts a').each(function(index) {
-		
-		var link=jQuery(this).attr('href');
-		jQuery(this).after('<a class="read-more-link" href="'+link+'">Read More</a>');
-		
-	});
-</script>
+
 <?php
 get_footer();

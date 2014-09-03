@@ -58,13 +58,13 @@
 				c11.1,0,20.128-9.029,20.128-20.127C70.128,19.562,61.1,10.533,50,10.533L50,10.533z"/>
 			</svg>
 			<div class="cs-outcome">
-				100 Hours Saved	
-				<span>Every Month due to Better Technology</span>
+				<?php the_field('featured_outcome_line_1'); ?>	
+				<span><?php the_field('featured_outcome_line_2'); ?></span>
 			</div><!-- /.cs-outcome -->		
 		</div><!-- /.cs-featured-outcome -->
 		<div class="at_glance side-box">
 			<div class="box-title ribbon">
-				<?php the_title(); ?> <span>at a glance</span>
+				<?php the_field('client_name'); ?> <span>at a glance</span>
 			</div><!-- /.box-title -->
 				<div class="glance-desc">
 					<img src="<?php bloginfo('template_directory'); ?>/images/industry.png" alt=""/>
@@ -120,7 +120,7 @@
 		<div class="clear"></div><!-- /.clear -->
 		<?php if(get_field('related_customer_stories')): ?>
 			<div class="related_stories side-box">
-				<h3>Related Customer Stories</h3>
+				<h3>More Customer Stories</h3>
 				<ul>
 					<?php while(has_sub_field('related_customer_stories')): ?>
 				 

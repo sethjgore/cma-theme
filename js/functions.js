@@ -16,20 +16,9 @@
 			return;
 		}
 
-		button = nav.find( '.menu-toggle' );
-		if ( ! button ) {
-			return;
-		}
-
-		// Hide button if menu is missing or empty.
-		menu = nav.find( '.nav-menu' );
-		if ( ! menu || ! menu.children().length ) {
-			button.hide();
-			return;
-		}
-
-		$( '.menu-toggle' ).on( 'click.twentyfourteen', function() {
-			nav.toggleClass( 'toggled-on' );
+		$( '.menu-toggle' ).on('click touchstart', function(e) {
+		  e.preventDefault(); e.stopPropagation();
+			nav.stop().toggleClass( 'toggled-on' );
 		} );
 	} )();
 
@@ -56,22 +45,38 @@
 
 	
 
-	// Initialize Featured Content slider.
-	_window.load( function() {
-		if ( body.is( '.slider' ) ) {
-			$( '.featured-content' ).featuredslider( {
-				selector: '.featured-content-inner > article',
-				controlsContainer: '.featured-content'
-			} );
-		}
-	} );
-
+  //Initialize Homepage Slider
+  if($(".hp_slider .cycle-slideshow").length>0){
+    $('.hp_slider .cycle-slideshow').cycle({
+  		fx: 'fade',  
+  		speed: 900,
+  		timeout: 6000,
+  		next: "#slide_next",
+  		prev: "#slide_prev",
+  		pause: 1,
+  		fit: 1,
+  		width: "100%"  
+  	});
+	}
+    				
+  //Initialize Award Slider
+  if($(".award_slider.cycle-slideshow").length>0){
+    $('.award_slider.cycle-slideshow').cycle({
+  		fx: 'fade', 
+  		speed: 500,
+  		timeout: 4500,
+  		next: "#slide_next",
+  		prev: "#slide_prev",
+  		pause: 1
+  	});
+	}
+    				
 	//Initialize Client Scroller
-    if(document.getElementById("logo-scroller") !== null){
-    	$("#logo-scroller").simplyScroll({
+    if($("#logo-scroller").length>0){
+    	jQuery("#logo-scroller").simplyScroll({
     		pauseOnHover: true,
     		pauseOnTouch: true,
-    		speed: 1.5
+    		speed: 1
        	});
     }
     
@@ -79,7 +84,7 @@
     	e.preventDefault();
     });
 	
-	if($('.cs-summary').length > 0){
+	if($('.cs-summary').length > 0 && _window.width() > 767){
 		if($('.cs-summary').height() > $('.cs-notables').height()){ 
 			$('.cs-notables').height($('.cs-summary').height()); 
 		} else {
@@ -87,6 +92,26 @@
 		}
 		jQuery('.related_stories').css({'position':'absolute','border-bottom':0,'width':'94%'});
 	}
+  //Filter Customer Stories
+  $filter_handles = jQuery('#filter_handles');
+  $filter_handles.find('li').click(function() {
+        var solution = jQuery(this).attr('rel');
+        $sorted = jQuery('#filter_stories_all').find('li.' + solution);
+        $new = $sorted.clone(true, true);
+        console.log($new);
+        jQuery('#filter_stories_result').quicksand($new, {
+            duration: 900,
+            attribute: 'data-id',
+            easing: 'easeInOutQuad',
+            adjustHeight: 'dynamic',
+            useScaling: true
+        }, function() {
+            //Reset On Click Event
+            
+        });
+        $filter_handles.find('li').removeClass('current');
+        jQuery(this).addClass('current');
+    });
 	
 } )( jQuery );
 

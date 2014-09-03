@@ -15,7 +15,7 @@
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="wrapper">
 				<div class="row">
-					<div class="cma-locations col-xs-24 col-sm-6">
+					<div class="cma-locations col-xs-24 col-sm-6  cma-footer-block">
 						<div class="footer-wrapper">
 							<?php if(get_field('locations','options')): ?>
 						  
@@ -29,7 +29,7 @@
 										<span class="glyphicon glyphicon-phone"></span> <?php the_sub_field('phone_2'); ?><br>
 									<?php endif; ?>
 									<?php  if(get_sub_field('email')): ?>
-										<span class="glyphicon glyphicon-envelope"></span> <a href="mailto:<?php the_sub_field('email'); ?>"><?php the_sub_field('email'); ?></a><br>
+										<span class="glyphicon glyphicon-envelope"></span> <a class="footer-email" href="mailto:<?php the_sub_field('email'); ?>"><?php the_sub_field('email'); ?></a><br>
 									<?php endif; ?>
 									<br>
 								<?php endwhile; ?>
@@ -38,25 +38,25 @@
 						</div><!-- /.footer-wrapper -->
 						
 					</div><!-- .col-xs-24 col-sm 8 -->
-					<div class="cma-quick-links col-xs-24 col-sm-6">
+					<div class="cma-quick-links col-xs-24 col-sm-6 cma-footer-block">
 						<div class="footer-wrapper">
 							<h3>CMA Quick Links</h3>
 							<?php wp_nav_menu( array( 'theme_location' => 'footer_menu', 'menu_class' => 'footer-menu' ) ); ?>
 						</div><!-- /.footer-wrapper -->
 					</div><!-- .col-xs-24 col-sm-8 -->
-					<div class="social-media col-xs-24 col-sm-6">
+					<div class="social-media col-xs-24 col-sm-6  cma-footer-block">
 						<div class="footer-wrapper">
 							<h3>Stay Connected</h3>
-							<a href=""><span class="genericon genericon-facebook-alt"></span></a>
-							<a href=""><span class="genericon genericon-twitter"></span></a>
-							<a href=""><span class="genericon genericon-youtube"></span></a>
-							<a href=""><span class="genericon genericon-linkedin"></span></a>
-							<a href=""><span class="genericon genericon-feed"></span></a>
-							<br><br><br>
-							Get product updates and other news. We will never sell your email address. Read our privacy policy.
+							<a target="_blank" class="social-icon-footer" href="https://www.facebook.com/CMATechnologySolutions"><span class="genericon genericon-facebook-alt"></span></a>
+							<a target="_blank" class="social-icon-footer" href="https://twitter.com/CMATechSol"><span class="genericon genericon-twitter"></span></a>
+							<a target="_blank" class="social-icon-footer" href="https://www.youtube.com/user/CMATechnology"><span class="genericon genericon-youtube"></span></a>
+							<a target="_blank" class="social-icon-footer" href="http://www.linkedin.com/company/cma-technology-solutions"><span class="genericon genericon-linkedin"></span></a>
+							<a target="_blank" class="social-icon-footer" href="http://www.cmaontheweb.com/blog/"><span class="genericon genericon-feed"></span></a>
+							<div class="clear"></div>
+							<p>Get product updates and other news. We will never sell your email address.</p>
 						</div><!-- /.footer-wrapper -->
 					</div><!-- .col-xs-24 col-sm-8 -->
-					<div class="cma-from-blog col-xs-24 col-sm-6">
+					<div class="cma-from-blog col-xs-24 col-sm-6  cma-footer-block">
 						<div class="footer-wrapper">
 							<h3>From the Blog</h3>
 							<?php
@@ -83,14 +83,14 @@
 				</div><!-- .row -->
 				<br><br>
 				<div class="row">
-					<div class="col-xs-20 credits">
-						© 2013 CMA Technology Solutions. All Rights Reserved.
+					<div class="col-xs-24 col-sm-20 credits">
+						© <?php echo date('Y'); ?> CMA Technology Solutions. All Rights Reserved. | <a href="<?php echo site_url(); ?>/privacy-policy/">Privacy Policy</a>
 					</div><!-- .col-xs-20 -->
-					<div class="col-xs-4 cma-footer-svg">
+					<div class="col-xs-24 col-sm-4 cma-footer-svg">
 						<svg class="hide-IE" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 								 viewBox="0 0 337.235 201.253" enable-background="new 0 0 337.235 201.253"
 								 xml:space="preserve">
-								 <title>CMA Technology Souitions Baton Rouge</title>
+								 <title>CMA Technology Solutions Baton Rouge</title>
 							<g>
 								<g>
 									<path fill="#c1caca" d="M57.139,113.912c-31.524-9.523-49.981-40.784-41.196-69.818c8.77-29.03,41.442-44.838,72.979-35.312
@@ -127,6 +127,18 @@
 			
 		</footer><!-- #colophon -->
 	</div><!-- #page -->
+
+   <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40839438-1', 'cmaontheweb.com');
+  ga('send', 'pageview');
+
+</script>
+
 
 	<?php wp_footer(); ?>
 </body>

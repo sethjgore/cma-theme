@@ -15,20 +15,32 @@
 <!--[if IE 8]>
 <html class="ie ie8" <?php language_attributes(); ?>>
 <![endif]-->
-<!--[if !(IE 7) | !(IE 8) ]><!-->
+<!--[if IE 9]>
+<html class="ie ie9" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8) | !(IE 9) ]><!-->
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" />
-	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-	<![endif]-->
+
+	<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
 	<?php wp_head(); ?>
+		<!--[if lt IE 9]>
+  	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/respond.js"></script>
+	<![endif]-->
 </head>
 
 <body <?php body_class(); ?>>
@@ -45,12 +57,12 @@
 		<div class="header-main">
 			<div class="wrapper">
 				<div class="row">
-					<div class="col-xs-8">
+					<div class="col-xs-6 col-sm-4 col-md-8 col-cma-logo">
 						<a class="main-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 							<svg class="hide-IE" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 								 viewBox="0 0 337.235 201.253" enable-background="new 0 0 337.235 201.253"
 								 xml:space="preserve">
-								 <title>CMA Technology Souitions Baton Rouge</title>
+								 <title>CMA Technology Solutions Baton Rouge</title>
 							<g>
 								<g>
 									<path fill="#00476C" d="M57.139,113.912c-31.524-9.523-49.981-40.784-41.196-69.818c8.77-29.03,41.442-44.838,72.979-35.312
@@ -82,18 +94,18 @@
 							</g>
 							</svg>
 
-							<img class="IE-icon show-IE" src="<?php bloginfo('template_directory'); ?>/images/CMA-Technology-Solutions-Baton-Rouge-LA-cherbonnier-mayer-associates.png" alt="CMA Technology Souitions Baton Rouge">
+							<img class="IE-icon show-IE" src="<?php bloginfo('template_directory'); ?>/images/CMA-Technology-Solutions-Baton-Rouge-LA-cherbonnier-mayer-associates.png" alt="CMA Technology Souitions Baton Rouge" width="120">
 						</a>
 					</div><!-- /.col-xs-8 -->
-					<div class="col-xs-12 pull-right header-contact">
+					<div class="col-xs-18 col-sm-15 col-md-12 pull-right header-contact">
 						<div class="row">
-							<div class="col-xs-24 col-md-8 header-email">
+							<div class="col-xs-8 col-sm-8 col-md-8 header-email">
 								<a target="_blank" href="mailto:info@cmaontheweb.com">info@cmaontheweb.com</a>
 							</div><!-- .col-xs-24 col-md-8 -->
-							<div class="col-xs-24 col-md-8 header-phone">
+							<div class="col-xs-8 col-sm-8 col-md-8 header-phone">
 								800-349-9200
 							</div><!-- .col-xs-24 col-md-7 -->
-							<div class="col-xs-24 col-md-8">
+							<div class="col-xs-8 col-sm-8 col-md-8 header-search">
 								<?php get_search_form(); ?>
 							</div><!-- /.col-xs-24 col-md-8 -->
 						</div><!-- .row -->
@@ -103,18 +115,19 @@
 			<div class="menu-bar">
 			    <div class="wrapper">
 			    	<div class="row">
-				    	<div class="col-md-24 col-sm-20">
+				    	<div class="col-sm-24 col-xs-24">
 							<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-								<h1 class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></h1>
+								<h1 class="menu-toggle"><?php _e( 'Menu', 'twentyfourteen' ); ?></h1>
 								<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
 								<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu','walker'=> new cma_walker_nav_menu() ) ); ?>
 							</nav>
 						</div><!-- /.col-md-24 col-sm-20 -->
-						<div class="visible-sm col-sm-4">
+						<!--
+              <div class="visible-xs col-xs-4">
 							<div class="search-toggle ">
 								<a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
 							</div>
-						</div><!-- /.col-xs-6 -->
+						</div> -->
 				    </div><!-- /.row -->
 			    </div><!-- /.wrapper -->
 			</div><!--  /.menu-bar -->

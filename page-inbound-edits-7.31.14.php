@@ -296,8 +296,6 @@ get_header(); ?>
 						</div><!-- .col-xs-24 col-sm-5 -->
 						<div class="col-xs-24 col-sm-19">
 								<?php
-								$rss=get_post_meta($post->ID, "RSS_Feed", true); 
-								if(!$rss) {
 								while($loop->have_posts()): $loop->the_post(); ?>
 									
 									<div class="related-blog-post <?php if( $i%2 == 0) echo 'pull-right'; ?>">
@@ -313,20 +311,7 @@ get_header(); ?>
 								<?php
 									$i++;
 									endwhile;
-									}
-									else { ?>
-                                    <div class="hubspot-posts">
-                              
-                                    <?php
-										$rss_html=htmlspecialchars_decode(do_shortcode('[rss feed="'.$rss.'" num="5" excerpt="true"]')); 
-								$rss_html=preg_replace("/<img[^>]+\>/i", "(image) ", $rss_html);
-								$rss_html=str_replace('(image)','',$rss_html); 
-								$rss_html=str_replace('<br>','',$rss_html); 
-								echo($rss_html);
-										
-									}
 									wp_reset_postdata(); ?>
-                                    </div>
 						</div><!-- .col-xs-24 col-sm-19 -->
 					</div><!-- .row -->
 				</div><!-- /.wrapper -->
@@ -338,13 +323,6 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 </div><!-- #main-content -->
-<script type="text/javascript">
-jQuery('.related-blog-posts a').each(function(index) {
-		
-		var link=jQuery(this).attr('href');
-		jQuery(this).after('<a class="read-more-link" href="'+link+'">Read More</a>');
-		
-	});
-</script>
+
 <?php
 get_footer();

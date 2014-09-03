@@ -173,32 +173,15 @@ function twentyfourteen_widgets_init() {
 	register_widget( 'Twenty_Fourteen_Ephemera_Widget' );
 
 	register_sidebar( array(
-		'name'          => __( 'Primary Sidebar', 'twentyfourteen' ),
-		'id'            => 'sidebar-1',
-		'description'   => __( 'Main sidebar that appears on the left.', 'twentyfourteen' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Content Sidebar', 'twentyfourteen' ),
-		'id'            => 'sidebar-2',
-		'description'   => __( 'Additional sidebar that appears on the right.', 'twentyfourteen' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Footer Widget Area', 'twentyfourteen' ),
+		'name'          => __( 'Subscription', 'twentyfourteen' ),
 		'id'            => 'sidebar-3',
-		'description'   => __( 'Appears in the footer section of the site.', 'twentyfourteen' ),
+		'description'   => __( 'Subscriptions for Blog.', 'twentyfourteen' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
+	
 }
 add_action( 'widgets_init', 'twentyfourteen_widgets_init' );
 
@@ -265,6 +248,9 @@ function twentyfourteen_scripts() {
 
 	if (  is_front_page() ){
 		wp_enqueue_script( 'jquery-plugins', get_template_directory_uri() . '/js/plugins.js', array('jquery'), '1.0' );
+	}
+	if (  is_page(2506) ){
+		wp_enqueue_script( 'jquery-plugins-customer-story', get_template_directory_uri() . '/js/plugins-cust-story.js', array('jquery'), '1.0' );
 	}
 	if ( is_front_page() && 'slider' == get_theme_mod( 'featured_content_layout' ) ) {
 		wp_enqueue_script( 'twentyfourteen-slider', get_template_directory_uri() . '/js/slider.js', array( 'jquery' ), '20131205', true );
@@ -699,6 +685,20 @@ function customer_stories_init() {
 }
 add_action( 'init', 'customer_stories_init' );
 
+add_action( 'init', 'create_cust_tax' );
+
+function create_cust_tax() {
+	register_taxonomy(
+		'solution',
+		'customer_stories',
+		array(
+			'label' => __( 'Solution' ),
+			'rewrite' => array( 'slug' => 'solution' ),
+			'hierarchical' => true,
+		)
+	);
+}
+
 function cma_partners_init() {
   $labels = array(
     'name'               => 'Partners',
@@ -728,9 +728,69 @@ function cma_partners_init() {
 }
 add_action( 'init', 'cma_partners_init' );
 
+function cma_testimonial_init() {
+  $labels = array(
+    'name'               => 'Testimonials',
+    'singular_name'      => 'Testimonial',
+    'add_new'            => 'Add New',
+    'add_new_item'       => 'Add A New Testimonial',
+    'parent_item_colon'  => '',
+    'menu_name'          => 'Testimonials'
+  );
+
+  $args = array(
+    'labels'             => $labels,
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'query_var'          => true,
+    'rewrite'            => array( 'slug' => 'testimonials' ),
+    'capability_type'    => 'post',
+    'has_archive'        => true,
+    'hierarchical'       => false,
+    'menu_position'      => null,
+    'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+  );
+
+  register_post_type( 'testimonials', $args );
+}
+add_action( 'init', 'cma_testimonial_init' );
+
+
 function addhttp($url) {
     if (!preg_match("~^(?:f|ht)tps?://~i", $url)) {
         $url = "http://" . $url;
     }
     return $url;
 }
+
+
+add_theme_support( 'infinite-scroll', array(
+    'container' => 'blog-wrapper',
+    'footer' => false
+) );
+
+function new_excerpt_more( $more ) {
+	return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">Continue Reading <span class="genericon genericon-next"></span></a>';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
+
+add_filter('gform_field_value_cma_page_name', 'add_page_title_sidebar_form');
+function add_page_title_sidebar_form($value){
+    global $post;
+    return 'User filled out this form from the ' . get_the_title($post->ID) . ' page';
+}
+
+add_filter('gform_field_value_cma_contact_refer_page', 'add_page_referer_contact_form');
+function add_page_referer_contact_form($value){
+    global $post;
+    return 'User landed on the Contact CMA page from this url: ' . wp_get_referer();
+}
+
+function md_nmi_custom_content( $content, $item_id, $original_content ) {
+  $content = '<span class="menu-icon">'.$content . '</span><span class="menu-title">' . $original_content . '</span>';
+
+  return $content;
+}
+add_filter( 'nmi_menu_item_content', 'md_nmi_custom_content', 10, 3 );

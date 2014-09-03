@@ -38,7 +38,7 @@ get_header(); ?>
 						</div><!-- /.wrapper -->
 						<div class="cs-action">
 							<div class="wrapper">
-								<?php the_field('call_to_action_text'); ?>
+								<span><?php the_field('call_to_action_text'); ?></span>
 								<?php if(get_field('call_to_action_link')): ?>
 								<a class="btn btn-default" href="<?php the_field('call_to_action_link'); ?>"><?php the_field('call_to_action_button_text'); ?></a>
 								<?php endif; ?>

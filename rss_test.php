@@ -1,5 +1,9 @@
 <?php
 /**
+Template Name: RSS Test
+*
+*/
+/**
  * The template for displaying all pages
  *
  * This is the template that displays all pages by default.
@@ -295,38 +299,86 @@ get_header(); ?>
 							Related Blog Posts
 						</div><!-- .col-xs-24 col-sm-5 -->
 						<div class="col-xs-24 col-sm-19">
-								<?php
+                        <style>
+						.related-blog-posts li  {
+							width: 48%;
+							box-sizing: border-box;
+							-moz-box-sizing: border-box;
+							float: left;
+							padding: 20px;
+							background-image: url(http://cmaontheweb.com/wp-content/themes/cma/images/pencil-back.png);
+							background-repeat: no-repeat;
+							border-style: solid;
+							border-width: 1px;
+							border-color: rgb(216, 219, 220);
+							padding: 29px 15px 29px 80px;
+							margin-right: 2%;
+							margin-bottom: 13px;
+							list-style-type: none;
+							height: 140px;
+						}
+						.related-blog-posts ul {
+							padding:0;
+							margin:0
+						}
+						.related-blog-posts p {
+							display: none;
+						}
+						.related-blog-posts a {
+							color: #555555;
+							font-size: 18px;
+							font-style: italic;
+							display: block;
+							max-height: 55px;
+							overflow: hidden;
+							
+						}
+						.related-blog-posts a:hover {
+							text-decoration: none;
+							
+						}
+						.related-blog-posts span {
+							display: none;
+							
+						}
+						
+						.read-more-link {
+							font-weight: bold;
+							font-size: 14px !important;
+							font-style: normal !important;
+							border-bottom: 2px solid #1f95bc;
+							color: #1f95bc !important;
+							padding:0;
+							margin:0;
+							height: initial !important;
+							text-decoration: none;
+							display: inline !important;
+						}
+						.read-more-link:hover {
+						
+							text-decoration: none !important;
+							
+						}
+						
+						@media only screen and (max-width:767px)  {
+							.related-blog-posts li  {
+							width: 100%;
+								margin-right: 0;
+							
+						}
+						}
+						</style>
+							
+							
+								<?php 
 								$rss=get_post_meta($post->ID, "RSS_Feed", true); 
-								if(!$rss) {
-								while($loop->have_posts()): $loop->the_post(); ?>
-									
-									<div class="related-blog-post <?php if( $i%2 == 0) echo 'pull-right'; ?>">
-										<a href="<?php the_permalink(); ?>">
-										<span class="glyphicon glyphicon-pencil"></span>
-										<?php 
-										$in = get_the_title();
-										echo strlen($in) > 50 ? substr($in,0,50)."..." : $in; ?>
-										<br>
-										<span class="rdmore">Read More</span></a>
-									</div><!-- .col-xs-11 -->
-
-								<?php
-									$i++;
-									endwhile;
-									}
-									else { ?>
-                                    <div class="hubspot-posts">
-                              
-                                    <?php
-										$rss_html=htmlspecialchars_decode(do_shortcode('[rss feed="'.$rss.'" num="5" excerpt="true"]')); 
+								$rss_html=htmlspecialchars_decode(do_shortcode('[rss feed="'.$rss.'" num="5" excerpt="true"]')); 
 								$rss_html=preg_replace("/<img[^>]+\>/i", "(image) ", $rss_html);
 								$rss_html=str_replace('(image)','',$rss_html); 
 								$rss_html=str_replace('<br>','',$rss_html); 
 								echo($rss_html);
-										
-									}
+								
 									wp_reset_postdata(); ?>
-                                    </div>
 						</div><!-- .col-xs-24 col-sm-19 -->
 					</div><!-- .row -->
 				</div><!-- /.wrapper -->

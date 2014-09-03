@@ -44,16 +44,16 @@ get_header(); ?>
               /*
               *  Loop through a Flexible Content field and display it's content with different views for different sidebar layouts
               */
-              $loop_count = 1;
+               
               while(has_sub_field("page_sidebar")): ?>
                
               	<?php if(get_row_layout() == "cma_partners"): // layout: Partners ?>
                
-              		<div class="work_with_partners sidebar_element" <?php if($loop_count == 1) echo 'style="min-height:143px"'; ?>>
+              		<div class="work_with_partners sidebar_element">
       							<?php if(get_sub_field('partner_companies')): ?>
       
-      								<div class="partner_title" >
-      									Featured Partners<br>
+      								<div class="partner_title">
+      									Partners We Work With<br>
       								</div><!-- /.partner_title -->
       							    <ul>
       								<?php $count=1;
@@ -86,33 +86,13 @@ get_header(); ?>
                
               	<?php elseif(get_row_layout() == "file"): // layout: File ?>
                
-                  
-              		<div class="sidebar_element file_element"  <?php if($loop_count == 1) echo 'style="min-height:143px"'; ?>>
-              		  <?php if(get_sub_field('section_title')): ?>
-              		  <div class="partner_title" >
-      									<?php the_sub_field('section_title'); ?><br>
-      								</div><!-- /.partner_title -->
-      						  <?php endif; ?>
-              			
-              			<?php if(get_sub_field('all_files')): ?>
-              			 
-              				<ul>
-              			 
-              				<?php while(has_sub_field('all_files')): ?>
-              			 
-              					<span class="genericon genericon-document"></span> <a href="<?php the_sub_field("upload_file"); ?>" ><?php the_sub_field("link_text"); ?></a><br>
-              			 
-              				<?php endwhile; ?>
-              			 
-              				</ul>
-              			 
-              			<?php endif; ?>
-              			
+              		<div class="sidebar_element">
+              			<a href="<?php the_sub_field("upload_file"); ?>" ><span class="genericon genericon-document"></span> <?php the_sub_field("link_text"); ?></a>
               		</div>
                
               	<?php elseif(get_row_layout() == "subpage_navigation"): // layout: Subnavigation ?>
             				  
-            				  <div class="sidebar-menu sidebar_element"  <?php if($loop_count == 1) echo 'style="min-height:143px"'; ?>>
+            				  <div class="sidebar-menu sidebar_element">
       								  <div class="parent-page">
       								  	<?php echo the_sub_field('title'); ?><span class="caret"></span>
       								  </div><!-- /.parent-page -->
@@ -137,7 +117,7 @@ get_header(); ?>
                       <!-- <div class="sidebar-menu-empty sidebar_element"></div> -->
                	<?php elseif(get_row_layout() == "testimonial"): // layout: Testimonial ?>
                
-              		 <div class="sidebar_element testimonial_element"  <?php if($loop_count == 1) echo 'style="min-height:143px"'; ?>>
+              		 <div class="sidebar_element">
               		 	
                     <?php
                        
@@ -151,16 +131,15 @@ get_header(); ?>
                        
                       	?>
                           <div>
-                          	<?php the_content(); ?><span class="test_author">- <?php the_field('testimonial_author'); ?></span>
+                          	<?php the_content(); ?><br><span class="test_author"><?php the_field('testimonial_author'); ?></span>
                           </div>
-                          <div class="clear"></div>
                           <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
                       <?php endif; ?>
               		 </div><!-- .sidebar_element -->
                
                 <?php elseif(get_row_layout() == "image_icon"): // layout: Image / Logo ?>
                
-              		 <div class="sidebar_element image_file"  <?php if($loop_count == 1) echo 'style="min-height:143px"'; ?>> <?php echo $count; ?>
+              		 <div class="sidebar_element image_file">
               		 	 <?php 
               		 	 $attachment_id = get_sub_field('image_file');
               		 	 $size = "medium"; // (thumbnail, medium, large, full or custom size)
@@ -171,7 +150,7 @@ get_header(); ?>
               		 
               	<?php elseif(get_row_layout() == "form"): // layout: Form ?>
                
-              		 <div class="sidebar_element form_element"  <?php if($loop_count == 1) echo 'style="min-height:143px"'; ?>>
+              		 <div class="sidebar_element form_element">
               		 	   <?php 
                             $form = get_sub_field('selected_form');
                             gravity_form_enqueue_scripts($form->id, true);
@@ -181,7 +160,7 @@ get_header(); ?>
               		 
                 <?php elseif(get_row_layout() == "video"): // layout: Video ?>
                
-              		 <div class="sidebar_element video_element"  <?php if($loop_count == 1) echo 'style="min-height:143px"'; ?>>
+              		 <div class="sidebar_element video_element">
               		 	 <?php if(get_sub_field('video_link')): ?>
                 			<div class="video-box">
                 				<a target="_blank" href="<?php the_sub_field('video_link'); ?>">
@@ -198,25 +177,91 @@ get_header(); ?>
               		 </div><!-- .sidebar_element -->
               		 
               		<?php elseif(get_row_layout() == "empty_block"): // layout: Empty Block ?>
-              		 <div class="sidebar-menu-empty"  <?php if($loop_count == 1) echo 'style="min-height:143px"'; ?>></div>
+              		 <div class="sidebar-menu-empty"></div>
               	<?php endif; ?>
                
-                
-              <?php $loop_count++;
-              endwhile; ?>
+              <?php endwhile; ?>
 							
 						
 						<!-- End Sidebar -->
 						
-				
-        </div><!-- .col-sm-24 col-md-7 -->
+						
+						<?php
+							  
+							  $has_children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0");
+							  if($has_children){
+							  	$children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0");
+							  	$titlenamer = get_the_title($post->ID);
+							  	$parent = $post->ID;
+							  } else {
+							  	if($post->post_parent && $post->post_parent != 7) {
+								  $children = wp_list_pages("title_li=&child_of=".$post->post_parent."&echo=0");
+								  $titlenamer = get_the_title($post->post_parent);
+								  $parent = $post->post_parent;
+							  	}		
+							  }
+							  
+							 
+							  if ($children) { ?>
+								<div class="sidebar-menu">
+								  <div class="parent-page">
+								  	<a href="<?php echo get_page_link($parent); ?>"><?php echo $titlenamer; ?></a><span class="caret"></span>
+								  </div><!-- /.parent-page -->
+								  <ul class="child-pages">
+								  <?php echo $children; ?>
+								  </ul>
+								</div><!-- /.sidebar-menu -->
+							<?php } else { ?>
+								<div class="sidebar-menu-empty"></div>
+							<?php } ?>
+						
+						<div class="work_with_partners">
+							<?php if(get_field('partner_companies')): ?>
+
+								<div class="partner_title">
+									Partners We Work With<br>
+								</div><!-- /.partner_title -->
+							    <ul>
+								<?php $count=1;
+								while(has_sub_field('partner_companies')): 
+									$post_object = get_sub_field('partners');
+										if( $post_object ): 
+										 
+											// override $post
+											$post = $post_object;
+											setup_postdata( $post ); 
+											?>
+
+										    <li><?php  echo wp_get_attachment_image( get_field('partner_logo'), "medium" , false, array('class'=>'partner_logo')); ?>
+
+											</li>
+										    <?php
+										    if($count%3 == 0) echo '</ul><ul>'; 
+										    $count++;
+										    wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+										<?php endif; ?>
+								
+								<?php endwhile; ?>
+								<?php $count--; while($count%3 != 0){
+									echo '<li class="no-border"></li>';
+									$count++;
+									} ?>
+							 	</ul>
+							<?php endif; ?>
+						</div><!-- /.work_with_partners -->
+
+
+
+
+
+					</div><!-- .col-sm-24 col-md-7 -->
 				</div><!-- .row -->
 			</div><!-- /.wrapper -->
 			
 			<div class="page-action">
 				<div class="wrapper">
 					<?php the_field('call_to_action_text'); ?>
-								<span><?php if(get_field('call_to_action_button_link')): ?></span>
+								<?php if(get_field('call_to_action_button_link')): ?>
 								<a class="btn btn-default" href="<?php the_field('call_to_action_button_link'); ?>?cma_subject=<?php echo get_the_title(); ?>"><?php the_field('call_to_action_button_text'); ?></a>
 								<?php endif; ?>
 				</div><!-- .wrapper -->
@@ -224,7 +269,7 @@ get_header(); ?>
 			
 			<div class="featured-related-content">
 			<?php
-        if(get_field('related_blog_post_category') != '') $display_border = true; else $display_border = false; 
+ 
 			$post_object = get_field('featured_customer_story');
 			 
 			if( $post_object ): 
@@ -235,17 +280,17 @@ get_header(); ?>
 			 
 				?>
 			    <div class="featured-customer-story">
-				<div class="wrapper" <?php if($display_border) echo 'style="border-bottom: 1px solid #d8dddd;"'; ?>>
+				<div class="wrapper">
 						<div class="fcs-title">
 							We work with businesses who care about being the best for their customers.<br>
 							This is what they have to say:
 						</div><!-- /.fcs-title -->
 						
 						<div class="row">
-							<div class="col-xs-24 col-sm-6">
+							<div class="col-xs-6">
 								<?php  echo wp_get_attachment_image( get_field('featured_cs_image'), "meduim" , false, array('class'=>'featured-cs-image')); ?>
 							</div><!-- .col-xs-6 -->
-							<div class="col-xs-24 col-sm-13 featured-cs-quote">
+							<div class="col-xs-13 featured-cs-quote">
 								<?php the_field('featured_cs_quote'); ?>
 								<div class="author">
 									<?php the_field('featured_cs_author'); ?>
@@ -254,7 +299,7 @@ get_header(); ?>
 									<?php the_field('featured_cs_author_title'); ?>
 								</div><!-- /.title -->
 							</div><!-- .col-xs-13 -->
-							<div class="col-xs-24 col-sm-4 pull-right featured-cs-link">
+							<div class="col-xs-4 pull-right featured-cs-link">
 								<svg version="1.1" id="All_glyphs" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 									  viewBox="0 0 70 96.737" enable-background="new 0 0 70 96.737" xml:space="preserve">
 								<path fill="#ffffff" d="M68.243,24.082L23.249,0.89C17.088-2.357,4.936,3.916,1.445,9.436c-1.56,2.466-1.443,4.249-1.443,5.256l0.554,52.373
@@ -273,21 +318,6 @@ get_header(); ?>
 			    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 			<?php endif; ?>
 			
-			<?php $cats = get_field('related_blog_post_category');
-			$cat_list = '';
-			if($cats){
-				foreach($cats as $cat){
-					$cat_list .= $cat . ',';
-				}
-			}
-			$args=array(
-			  'post_type' => 'post',
-			  'posts_per_page' => get_field('number_of_related_blogs'),
-			  'cat' => rtrim($cat_list, ','),
-			);
-			$i=1;
-			$loop = new WP_Query( $args );
-			if($cats != '' && $loop->post_count>0): ?>
 			<div class="related-blog-posts">
 				<div class="wrapper">
 					<div class="row">
@@ -296,8 +326,20 @@ get_header(); ?>
 						</div><!-- .col-xs-24 col-sm-5 -->
 						<div class="col-xs-24 col-sm-19">
 								<?php
-								$rss=get_post_meta($post->ID, "RSS_Feed", true); 
-								if(!$rss) {
+								$cats = get_field('related_blog_post_category');
+								$cat_list = '';
+								if($cats){
+									foreach($cats as $cat){
+										$cat_list .= $cat . ',';
+									}
+								}
+								$args=array(
+								  'post_type' => 'post',
+								  'posts_per_page' => get_field('number_of_related_blogs'),
+								  'cat' => rtrim('$cat_list', ','),
+								);
+								$i=1;
+								$loop = new WP_Query( $args );
 								while($loop->have_posts()): $loop->the_post(); ?>
 									
 									<div class="related-blog-post <?php if( $i%2 == 0) echo 'pull-right'; ?>">
@@ -313,38 +355,17 @@ get_header(); ?>
 								<?php
 									$i++;
 									endwhile;
-									}
-									else { ?>
-                                    <div class="hubspot-posts">
-                              
-                                    <?php
-										$rss_html=htmlspecialchars_decode(do_shortcode('[rss feed="'.$rss.'" num="5" excerpt="true"]')); 
-								$rss_html=preg_replace("/<img[^>]+\>/i", "(image) ", $rss_html);
-								$rss_html=str_replace('(image)','',$rss_html); 
-								$rss_html=str_replace('<br>','',$rss_html); 
-								echo($rss_html);
-										
-									}
 									wp_reset_postdata(); ?>
-                                    </div>
 						</div><!-- .col-xs-24 col-sm-19 -->
 					</div><!-- .row -->
 				</div><!-- /.wrapper -->
 			</div><!-- /.related-blog-posts -->
-			<?php endif; //$cats != '' ?>
 		</div><!-- /.featured-related-content -->
 
 		<?php endwhile; ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 </div><!-- #main-content -->
-<script type="text/javascript">
-jQuery('.related-blog-posts a').each(function(index) {
-		
-		var link=jQuery(this).attr('href');
-		jQuery(this).after('<a class="read-more-link" href="'+link+'">Read More</a>');
-		
-	});
-</script>
+
 <?php
 get_footer();
