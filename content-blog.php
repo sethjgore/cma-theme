@@ -11,20 +11,20 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  
+
   <div class="row">
   	<div class="col-xs-24 col-sm-6 post-icon">
-  		<?php 
+  		<?php
   		  if ( has_post_thumbnail() ) {
         	the_post_thumbnail('thumbnail');
         } else { ?>
           <img src="<?php bloginfo('template_directory'); ?>/images/cma-technology-baton-rouge.png" alt=""/>
-       <?php 
+       <?php
         }
   		 ?>
   	</div><!-- .col-sm-5 -->
   	<div class="col-xs-24 col-sm-18">
-  		
+
 	<header class="entry-header">
 		<?php
 
@@ -76,7 +76,7 @@
 		?>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
-	
+
 	</div><!-- .col-sm-19 -->
   </div><!-- .row -->
 </article><!-- #post-## -->
