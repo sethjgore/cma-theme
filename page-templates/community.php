@@ -21,8 +21,6 @@ get_header(); ?>
 							<h1><?php $title = get_the_title(); if(strlen($title)>29) echo '<span style="font-size:35px;">' . $title . '</span>'; else echo $title; ?></h1>
 							<h2><?php the_field('subtitle')?></h2>
 						</div><!-- /.internal-header -->
-
-            <h1>HELLO DAWG!</h1>
 						<?php
 
 							// Include the page content template.
