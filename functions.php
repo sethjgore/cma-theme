@@ -783,8 +783,22 @@ function cma_newsandevents_init() {
   );
 
   register_post_type( 'newsandevents', $args );
+
+  // Registers categories (taxonomies)
+  register_taxonomy(
+		'events',
+		'newsandevents',
+		array(
+			'label' => __( 'Events' ),
+			'rewrite' => array( 'slug' => 'events' ),
+			'hierarchical' => false
+		)
+	);
+
 }
+
 add_action( 'init', 'cma_newsandevents_init' );
+
 
 function cma_community_init() {
   $labels = array(

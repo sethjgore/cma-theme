@@ -21,8 +21,8 @@ get_header(); ?>
         <div class="row">
 					<div id="blog-wrapper" class="col-sm-24 col-md-16">
 						<div class="internal-header">
-							<h1>CMA in the Community</h1>
-							<h2>CMA does give back...</h2>
+							<h1>CMA News & Events</h1>
+							<h2>What's happening with CMA Technology Solutions</h2>
 						</div><!-- /.internal-header -->
 							<?php
                 if ( have_posts() ) :
