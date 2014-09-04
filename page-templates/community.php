@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: News and Events
+ * Template Name: Community
  */
 
 get_header(); ?>
