@@ -755,7 +755,7 @@ function cma_testimonial_init() {
 
   register_post_type( 'testimonials', $args );
 }
-add_action( 'init', 'cma_events_init' );
+add_action( 'init', 'cma_testimonial_init' );
 
 function cma_newsandevents_init() {
   $labels = array(
