@@ -76,3 +76,6 @@ get_header(); ?>
     </div><!-- #content -->
   </div><!-- #primary -->
 </div><!-- #main-content -->
+ <?php
+get_footer();
+
