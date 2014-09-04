@@ -50,7 +50,7 @@ get_header(); ?>
 
                   <?php
                   $args = array(
-                   'taxonomy'     => 'event_types',
+                   'taxonomy'     => 'cma_events_category',
                    'orderby'      => 'name',
                    'show_count'   => 0,
                    'pad_counts'   => 0,
