@@ -786,7 +786,7 @@ function cma_newsandevents_init() {
 
   // Registers categories (taxonomies)
   register_taxonomy(
-		'events',
+		'cma_events_category',
 		'newsandevents',
 		array(
 			'label' => __( 'CMA Events Category' ),
