@@ -18,7 +18,7 @@
   		  if ( has_post_thumbnail() ) {
         	the_post_thumbnail('thumbnail');
         } else { ?>
-          <img src="<?php bloginfo('template_directory'); ?>/images/bkg-news.png" alt=""/>
+          <img src="<?php bloginfo('template_directory'); ?>/images/bkg-community.png" alt=""/>
        <?php
         }
   		 ?>

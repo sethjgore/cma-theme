@@ -39,26 +39,6 @@ get_header(); ?>
 					</div><!-- .col-sm-24 col-md-16 -->
 					<div class="col-sm-24 col-md-7 col-md-offset-1 page-custom-sidebar">
 
-
-								<div class="sidebar-menu">
-								  <div class="parent-page">
-								  	Blog Categories<span class="caret"></span>
-								  </div><!-- /.parent-page -->
-								  <ul class="child-pages">
-								  <?php
-                  $args = array(
-                    'orderby' => 'name',
-                    'order' => 'ASC',
-                    'hide_empty' => false
-                    );
-                  $categories = get_categories($args);
-                    foreach($categories as $category) {
-                      echo '<li><a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';
-                      echo ' ('. $category->count . ')</li>';  }
-                  ?>
-								  </ul>
-								</div><!-- /.sidebar-menu -->
-
 						<div class="email-updates">
 						  <?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
             		<?php dynamic_sidebar( 'sidebar-3' ); ?>
