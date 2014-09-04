@@ -24,7 +24,7 @@ get_header(); ?>
 						<?php
 
 							// Include the page content template.
-							get_template_part( 'content', 'partners' );
+							get_template_part( 'content', 'community' );
 
 
 						?>
