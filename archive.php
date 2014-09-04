@@ -27,7 +27,7 @@ get_header(); ?>
 		<img class="page-bkg-img" src="<?php bloginfo('template_directory'); ?>/images/bkg-blog.jpg" alt=""/>
 
 			<div class="wrapper">
-		        
+
         <div class="row">
 					<div id="blog-wrapper" class="col-sm-24 col-md-16">
 						<div class="internal-header">
@@ -39,16 +39,16 @@ get_header(); ?>
     					<?php
     						if ( is_day() ) :
     							printf( __( 'Daily Archives: %s', 'twentyfourteen' ), get_the_date() );
-    
+
     						elseif ( is_month() ) :
     							printf( __( 'Monthly Archives: %s', 'twentyfourteen' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'twentyfourteen' ) ) );
-    
+
     						elseif ( is_year() ) :
     							printf( __( 'Yearly Archives: %s', 'twentyfourteen' ), get_the_date( _x( 'Y', 'yearly archives date format', 'twentyfourteen' ) ) );
-    
+
     						else :
     							_e( 'Archives', 'twentyfourteen' );
-    
+
     						endif;
     					?>
     				</h1>
@@ -61,15 +61,13 @@ get_header(); ?>
 
                   // Include the page content template.
                   get_template_part( 'content', 'blog' );
-                
+
                 endwhile;
-						
+
       					endif;
       				?>
 					</div><!-- .col-sm-24 col-md-16 -->
 					<div class="col-sm-24 col-md-7 col-md-offset-1 page-custom-sidebar">
-							  
-							  
 								<div class="sidebar-menu">
 								  <div class="parent-page">
 								  	Blog Categories<span class="caret"></span>
@@ -82,19 +80,19 @@ get_header(); ?>
                     'hide_empty' => false
                     );
                   $categories = get_categories($args);
-                    foreach($categories as $category) { 
+                    foreach($categories as $category) {
                       echo '<li><a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';
-                      echo ' ('. $category->count . ')</li>';  } 
+                      echo ' ('. $category->count . ')</li>';  }
                   ?>
 								  </ul>
 								</div><!-- /.sidebar-menu -->
-							
+
 						<div class="email-updates">
 						  <?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
             		<?php dynamic_sidebar( 'sidebar-3' ); ?>
             	<?php endif; ?>
 						</div><!-- /.email-updates -->
-						
+
 						<div class="follow-us-sidebar">
 							<h3>Follow us</h3>
               Stay up to speed with CMA using social media
