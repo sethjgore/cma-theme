@@ -42,7 +42,7 @@ get_header(); ?>
 
 								<div class="sidebar-menu">
 								  <div class="parent-page">
-								  	Current Categories<span class="caret"></span>
+								  	Sort by Event Categories<span class="caret"></span>
 								  </div><!-- /.parent-page -->
 								  <ul class="child-pages">
 								   <?php
@@ -58,8 +58,6 @@ get_header(); ?>
                       echo '<li><a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';
                       echo ' ('. $category->count . ')</li>';  }
                   ?>
-
-                  echo wp_list_categories( $args ); ?>
 								  </ul>
 								</div><!-- /.sidebar-menu -->
 
