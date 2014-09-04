@@ -13,7 +13,7 @@ get_header(); ?>
 			// Start the Loop.
 			while ( have_posts() ) : the_post();
 		?>
-			<img class="page-bkg-img" src="<?php bloginfo('template_directory'); ?>/images/bkg-page.jpg" alt=""/>
+			<img class="page-bkg-img" src="<?php bloginfo('template_directory'); ?>/images/bkg-community.jpg" alt=""/>
 			<div class="wrapper">
 				<div class="row">
 					<div class="col-sm-24 col-md-16">
@@ -21,6 +21,8 @@ get_header(); ?>
 							<h1><?php $title = get_the_title(); if(strlen($title)>29) echo '<span style="font-size:35px;">' . $title . '</span>'; else echo $title; ?></h1>
 							<h2><?php the_field('subtitle')?></h2>
 						</div><!-- /.internal-header -->
+
+            <h1>HELLO DAWG!</h1>
 						<?php
 
 							// Include the page content template.
