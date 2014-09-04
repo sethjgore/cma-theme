@@ -789,8 +789,8 @@ function cma_newsandevents_init() {
 		'events',
 		'newsandevents',
 		array(
-			'label' => __( 'Events' ),
-			'rewrite' => array( 'slug' => 'events' ),
+			'label' => __( 'Event Types' ),
+			'rewrite' => array( 'slug' => 'event-types' ),
 			'hierarchical' => false
 		)
 	);

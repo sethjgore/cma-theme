@@ -44,14 +44,13 @@ get_header(); ?>
 								  <div class="parent-page">
                     <h1>Hello This is the tiger.</h1>
 								  	Sort by Category<span class="caret"></span>
-
 								  </div><!-- /.parent-page -->
 								  <ul class="child-pages">
 
 
                   <?php
                   $args = array(
-                   'taxonomy'     => 'Events',
+                   'taxonomy'     => 'event_types',
                    'orderby'      => 'name',
                    'show_count'   => 0,
                    'pad_counts'   => 0,
