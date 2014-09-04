@@ -13,7 +13,7 @@ get_header(); ?>
 			// Start the Loop.
 			while ( have_posts() ) : the_post();
 		?>
-			<img class="page-bkg-img" src="<?php bloginfo('template_directory'); ?>/images/bkg-news.png" alt=""/>
+			<img class="page-bkg-img" src="<?php bloginfo('template_directory'); ?>/images/bkg-blog.png" alt=""/>
 			<div class="wrapper">
 				<div class="row">
 					<div class="col-sm-24 col-md-16">
@@ -25,6 +25,7 @@ get_header(); ?>
 
 							// Include the page content template.
 							get_template_part( 'content', 'news' );
+
 
 
 						?>
