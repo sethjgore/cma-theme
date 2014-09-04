@@ -27,11 +27,10 @@ get_header(); ?>
 							get_template_part( 'content', 'news' );
 
 
+
 						?>
 					</div><!-- .col-sm-24 col-md-16 -->
           <div class="col-sm-24 col-md-7 col-md-offset-1 page-custom-sidebar">
-
-
                 <div class="sidebar-menu">
                   <div class="parent-page">
                     Blog Categories<span class="caret"></span>
@@ -71,8 +70,8 @@ get_header(); ?>
             </div><!-- .follow-us-sidebar -->
           </div><!-- .col-sm-24 col-md-7 -->
         </div><!-- .row -->
-
       </div><!-- /.wrapper -->
+    <?php endwhile; ?>
     </div><!-- #content -->
   </div><!-- #primary -->
 </div><!-- #main-content -->
