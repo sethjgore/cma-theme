@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Customer Stories
+ * Template Name: News and Events
  */
 
 get_header(); ?>
