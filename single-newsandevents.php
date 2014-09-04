@@ -47,12 +47,17 @@ get_header(); ?>
 								  <ul class="child-pages">
 								   <?php
                   $args = array(
-                   'taxonomy'     => 'cma_events_category',
-                   'orderby'      => 'name',
-                   'show_count'   => 0,
-                   'pad_counts'   => 0,
-                   'hierarchical' => 1
-                  );
+                    'orderby' => 'name',
+                    'order' => 'ASC',
+                    'hide_empty' => false,
+                    'taxonomy'     => 'cma_events_category',
+
+                    );
+                  $categories = get_categories($args);
+                    foreach($categories as $category) {
+                      echo '<li><a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';
+                      echo ' ('. $category->count . ')</li>';  }
+                  ?>
 
                   echo wp_list_categories( $args ); ?>
 								  </ul>
