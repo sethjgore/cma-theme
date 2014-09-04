@@ -41,7 +41,8 @@ get_header(); ?>
                   $args = array(
                     'orderby' => 'name',
                     'order' => 'ASC',
-                    'hide_empty' => false
+                    'hide_empty' => false,
+                    'taxonomy' => 'cma_events_category',
                     );
                   $categories = get_categories($args);
                     foreach($categories as $category) {
