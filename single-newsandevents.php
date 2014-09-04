@@ -42,10 +42,26 @@ get_header(); ?>
 
 								<div class="sidebar-menu">
 								  <div class="parent-page">
-								  	Blog Categories<span class="caret"></span>
+								  	Sort by Category<span class="caret"></span>
+                    <h1>Hello This is the tiger.</h1>
 								  </div><!-- /.parent-page -->
 								  <ul class="child-pages">
-								  <?php
+
+
+                                    <?php
+                  $args = array(
+                   'taxonomy'     => 'Events',
+                   'orderby'      => 'name',
+                   'show_count'   => 0,
+                   'pad_counts'   => 0,
+                   'hierarchical' => 1,
+                   'title_li'     => '',
+                  );
+                  ?>
+
+                  <?php echo wp_list_categories( $args ); ?>
+
+								  <!--<?php
                   $args = array(
                     'orderby' => 'name',
                     'order' => 'ASC',
@@ -55,7 +71,7 @@ get_header(); ?>
                     foreach($categories as $category) {
                       echo '<li><a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';
                       echo ' ('. $category->count . ')</li>';  }
-                  ?>
+                  ?>-->
 								  </ul>
 								</div><!-- /.sidebar-menu -->
 
