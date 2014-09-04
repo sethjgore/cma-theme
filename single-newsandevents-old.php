@@ -14,15 +14,15 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-		<img class="page-bkg-img" src="<?php bloginfo('template_directory'); ?>/images/bkg-blog.jpg" alt=""/>
+		<img class="page-bkg-img" src="<?php bloginfo('template_directory'); ?>/images/bkg-community.jpg" alt=""/>
 
 			<div class="wrapper">
 
         <div class="row">
 					<div id="blog-wrapper" class="col-sm-24 col-md-16">
 						<div class="internal-header">
-							<h1>CMA Blog</h1>
-							<h2>Thoughts and updates on everything CMA</h2>
+							<h1>CMA News & Events</h1>
+							<h2>What's happening with CMA Technology Solutions</h2>
 						</div><!-- /.internal-header -->
 							<?php
                 if ( have_posts() ) :
@@ -42,20 +42,23 @@ get_header(); ?>
 
 								<div class="sidebar-menu">
 								  <div class="parent-page">
-								  	Current Categories<span class="caret"></span>
+                    <h1>Hello This is the tiger.</h1>
+								  	Sort by Category<span class="caret"></span>
 								  </div><!-- /.parent-page -->
 								  <ul class="child-pages">
-								  <?php
+
+
+                  <?php
                   $args = array(
-                    'orderby' => 'name',
-                    'order' => 'ASC',
-                    'hide_empty' => false
-                    );
-                  $categories = get_categories($args);
-                    foreach($categories as $category) {
-                      echo '<li><a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';
-                      echo ' ('. $category->count . ')</li>';  }
-                  ?>
+                   'taxonomy'     => 'cma_events_category',
+                   'orderby'      => 'name',
+                   'show_count'   => 0,
+                   'pad_counts'   => 0,
+                   'hierarchical' => 1
+                  );
+
+                  echo wp_list_categories( $args ); ?>
+
 								  </ul>
 								</div><!-- /.sidebar-menu -->
 
