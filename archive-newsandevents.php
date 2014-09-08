@@ -37,7 +37,7 @@ get_header(); ?>
 
               <?php
 
-                $the_query = new WP_Query('category_name' => 'news');
+                $the_query = new WP_Query('category_name' => "news");
 
                 if ( $the_query->have_posts() ) :
                 // Start the Loop.
