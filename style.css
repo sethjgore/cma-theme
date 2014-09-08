@@ -945,7 +945,7 @@ span + .edit-link:before,
 
 .main-logo{
 		display: block;
-		margin-top: 9px;	
+		margin-top: 9px;
 		margin-bottom: 4px;
 }
 .main-logo svg, .main-logo IE-icon{
@@ -1371,7 +1371,7 @@ color: #fff;
     border:1.5em solid rgb(210,216,171) transparent;
     border: 15px solid rgba(210,216,171, 0.8);
     border-right-color:transparent;
-	
+
     /* height: 8px; */
     /* float: right; */
     margin-right: -30px;
@@ -1531,7 +1531,7 @@ a.post-thumbnail:hover {
 }
 .site-content .has-post-thumbnail .entry-header:hover a{
   text-decoration: none;
-} 
+}
 .page-bkg-img{
 	position: absolute;
 	width: 100%;
@@ -1720,7 +1720,7 @@ a.post-thumbnail:hover {
 }
 .intro-ribbon{
 	background: #00476c;
-	color: #fff;	
+	color: #fff;
 	padding: 25px 30px 17px;
 	min-height: 307px;
 }
@@ -1762,7 +1762,7 @@ a.post-thumbnail:hover {
 	border-top: 3px solid #d9e4e9;
 	border-bottom: 3px solid #d9e4e9;
 	padding: 27px 0 28px 39px;
-	background: url(images/bkg-quote.png) no-repeat 0% 20px; 
+	background: url(images/bkg-quote.png) no-repeat 0% 20px;
 	color: #1f95bc;
 	font-style: italic;
 	font-size: 18px;
@@ -1972,7 +1972,7 @@ a.post-thumbnail:hover {
 .related_stories ul li{}
 .related_stories ul li a{
 	color: #8a9596;
-	font-size: 14px;	
+	font-size: 14px;
 }
 .work_with_partners{
 	margin-top: 30px;
@@ -2018,9 +2018,9 @@ a.post-thumbnail:hover {
 	padding: 5%;
 }
 .featured-cs-image{
-	-webkit-border-radius: 50%;	
-	-moz-border-radius: 50%;	
-	border-radius: 50%;	
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
 	max-width: 100%;
 	height: auto;
 	border: 4px solid #00476c;
@@ -2115,7 +2115,7 @@ a.post-thumbnail:hover {
 	font-style: italic;
 	display: block;
 	padding: 29px 15px 29px 80px;
-	
+
 	margin-bottom: 10px;
 	/* min-height: 133px; */
 }
@@ -2164,17 +2164,17 @@ a.post-thumbnail:hover {
 							display: block;
 							max-height: 55px;
 							overflow: hidden;
-							
+
 						}
 						.related-blog-posts .hubspot-posts a:hover {
 							text-decoration: none;
-							
+
 						}
 						.related-blog-posts .hubspot-posts span {
 							display: none;
-							
+
 						}
-						
+
 						.related-blog-posts .hubspot-posts .read-more-link {
 							font-weight: bold;
 							font-size: 14px !important;
@@ -2188,19 +2188,19 @@ a.post-thumbnail:hover {
 							display: inline !important;
 						}
 						.related-blog-posts .hubspot-posts read-more-link:hover {
-						
+
 							text-decoration: none !important;
-							
+
 						}
-						
+
 						@media only screen and (max-width:767px)  {
 							.related-blog-posts .hubspot-posts li  {
 							width: 100%;
 								margin-right: 0;
-							
+
 							}
 						}
-						
+
 						/* end hubspot integration */
 .email-updates{
   background: #1f95bc;
@@ -2297,7 +2297,7 @@ a.post-thumbnail:hover {
   margin-bottom: 20px;
 }
 .fcs-image{
-  
+
 }
 .customer_stories_content{
   margin-bottom: 48px;
@@ -2480,13 +2480,13 @@ a.post-thumbnail:hover {
   transition: all 0.3s ease-in-out;
   -webkit-backface-visibility: hidden;
 }
-.solution-block.no-children:hover .icon-wrapper img { 
+.solution-block.no-children:hover .icon-wrapper img {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
   -o-transform: scale(1.2);
   transform: scale(1.2);
 
-} 
+}
 .solution-block.yes-children .mask{
   width: 100%;
   height: 100%;
@@ -2501,13 +2501,13 @@ a.post-thumbnail:hover {
   opacity: 0;
   z-index: 99;
   background: rgb(1,30,46);
-  background: rgba(1,30,46,.99); 
+  background: rgba(1,30,46,.99);
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-.solution-block.yes-children:hover .mask { 
+.solution-block.yes-children:hover .mask {
    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   filter: alpha(opacity=100);
   -moz-opacity: 1;
@@ -2530,7 +2530,7 @@ a.post-thumbnail:hover {
   filter: alpha(opacity=0);
   -moz-opacity: 0;
   -khtml-opacity: 0;
-  opacity: 0;  
+  opacity: 0;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -2564,7 +2564,7 @@ a.post-thumbnail:hover {
   filter: alpha(opacity=0);
   -moz-opacity: 0;
   -khtml-opacity: 0;
-  opacity: 0;  
+  opacity: 0;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -2583,7 +2583,7 @@ a.post-thumbnail:hover {
   -webkit-transition: all .4s ease-in-out;
   -moz-transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;  
+  transition: all .4s ease-in-out;
   border-bottom: 1px solid transparent;
   font-weight: 200;
 }
@@ -3021,7 +3021,7 @@ a.post-thumbnail:hover {
 .toll-free .toll-free-text{
   float: left;
   font-size: 18px;
-  color: #59c5e9; 
+  color: #59c5e9;
   line-height: 26px;
 }
 .toll-free .toll-free-text span{
@@ -3213,7 +3213,7 @@ a.post-thumbnail:hover {
  *
  */
 
-/* Default/Master classes 
+/* Default/Master classes
 
 Example markup format (for horizontal scroller)
 Note all DIVs are generated and should not be hard-coded
@@ -3247,19 +3247,19 @@ Note all DIVs are generated and should not be hard-coded
 		padding: 0;
 		list-style: none;
 	}
-	
+
 		.simply-scroll-list li {
 			padding: 0;
 			margin: 0;
 			list-style: none;
 		}
-	
+
 		.simply-scroll-list li img {
 			border: none;
 			display: block;
 			margin: 0 auto;
 		}
-	
+
 	.simply-scroll-btn {
 		position: absolute;
 		background-image: url(buttons.png);
@@ -3268,7 +3268,7 @@ Note all DIVs are generated and should not be hard-coded
 		z-index:3;
 		cursor: pointer;
 	}
-	
+
 	.simply-scroll-btn-left {
 		left: 6px;
 		bottom: 6px;
@@ -3280,7 +3280,7 @@ Note all DIVs are generated and should not be hard-coded
 	.simply-scroll-btn-left:hover, .simply-scroll-btn-left:focus {
 		background-position: 0 -88px;
 	}
-	
+
 	.simply-scroll-btn-right {
 		right: 6px;
 		bottom: 6px;
@@ -3292,7 +3292,7 @@ Note all DIVs are generated and should not be hard-coded
 	.simply-scroll-btn-right:hover, .simply-scroll-btn-right:focus {
 		background-position: -84px -88px;
 	}
-	
+
 	.simply-scroll-btn-up {
 		right: 6px;
 		top: 6px;
@@ -3304,7 +3304,7 @@ Note all DIVs are generated and should not be hard-coded
 	.simply-scroll-btn-up:hover, .simply-scroll-btn-up:focus {
 		background-position: -126px -88px;
 	}
-	
+
 	.simply-scroll-btn-down {
 		right: 6px;
 		bottom: 6px;
@@ -3316,7 +3316,7 @@ Note all DIVs are generated and should not be hard-coded
 	.simply-scroll-btn-down:hover, .simply-scroll-btn-down:focus {
 		background-position: -42px -88px;
 	}
-	
+
 	.simply-scroll-btn-pause {
 		right: 6px;
 		bottom: 6px;
@@ -3325,7 +3325,7 @@ Note all DIVs are generated and should not be hard-coded
 	.simply-scroll-btn-pause:hover, .simply-scroll-btn-pause:focus {
 		background-position: -168px -88px;
 	}
-	
+
 	.simply-scroll-btn-pause.active {
 		background-position: -84px -44px;
 	}
@@ -3351,34 +3351,34 @@ Note all DIVs are generated and should not be hard-coded
 		width: 100%;
 		height: 200px;
 	}
-	
+
 		.simply-scroll .simply-scroll-list {}
-		
+
 		.simply-scroll .simply-scroll-list li {
 			float: left;
 			width: 290px;
 			height: 200px;
 		}
 		.simply-scroll .simply-scroll-list li img {}
-	
+
 	.simply-scroll .simply-scroll-btn {}
-	
+
 	.simply-scroll .simply-scroll-btn-left {}
 	.simply-scroll .simply-scroll-btn-left.disabled {}
 	.simply-scroll .simply-scroll-btn-left:hover {}
-	
+
 	.simply-scroll .simply-scroll-btn-right {}
 	.simply-scroll .simply-scroll-btn-right.disabled {}
 	.simply-scroll .simply-scroll-btn-right:hover {}
-	
+
 	.simply-scroll .simply-scroll-btn-up {}
 	.simply-scroll .simply-scroll-btn-up.disabled {}
 	.simply-scroll .simply-scroll-btn-up:hover {}
-	
+
 	.simply-scroll .simply-scroll-btn-down {}
 	.simply-scroll .simply-scroll-btn-down.disabled {}
 	.simply-scroll .simply-scroll-btn-down:hover {}
-	
+
 
 
 
@@ -4958,7 +4958,7 @@ Note all DIVs are generated and should not be hard-coded
 }
 
 @media screen and (max-width: 400px) {
-	
+
 	.list-view .site-content .post-thumbnail {
 		background: none;
 		width: auto;
@@ -5140,7 +5140,7 @@ Note all DIVs are generated and should not be hard-coded
       border-radius: 0px;
       max-width: 65%;
       margin: 0 0 10px 15%;
-      
+
     }
     .featured-cs-quote{
       background-position: 7px 4%;
@@ -5298,7 +5298,7 @@ Note all DIVs are generated and should not be hard-coded
   .our-clients img.second-icon{
     display: none;
   }
-	
+
 }
 
 @media screen and (max-width: 783px) {
@@ -5400,9 +5400,9 @@ Note all DIVs are generated and should not be hard-coded
     top: 0;
     bottom: 0;
     width: 999px;   /* some huge width */
-  } 
+  }
   .solutions-page .internal-header:before {
-    right: 96%; 
+    right: 96%;
   }
   .solutions-page .internal-header:after {
     left: 96%;
@@ -5487,7 +5487,7 @@ Note all DIVs are generated and should not be hard-coded
   }
   .hp_slider .slide h4{
     font-size: 20px;
-    line-height: 24px;  
+    line-height: 24px;
   }
   .mission-statement h1{
     font-size: 20px;
@@ -5527,7 +5527,7 @@ Note all DIVs are generated and should not be hard-coded
     margin-right: 1px;
     display: block;
     float: left;
-    margin-bottom: 5px	
+    margin-bottom: 5px
   }
   .site-footer .cma-from-blog img{
     min-height: 31px;
@@ -5783,7 +5783,7 @@ Note all DIVs are generated and should not be hard-coded
 
 	.full-width .site-content {
 		margin-right: 0;
-	
+
 		/* overflow: hidden; */
 }
 
@@ -5871,7 +5871,7 @@ Note all DIVs are generated and should not be hard-coded
 	.site-info {
 		padding: 15px 30px;
 	}
-	
+
 }
 
 @media screen and (min-width: 783px) {
@@ -5986,8 +5986,8 @@ Note all DIVs are generated and should not be hard-coded
 	    -webkit-animation-name: fadeInDown;
 	    -moz-animation-name: fadeInDown;
     	animation-name: fadeInDown;
-	
-		
+
+
   }
   .primary-navigation ul li > ul li > ul{
       -webkit-animation-name: none;
@@ -6003,9 +6003,9 @@ Note all DIVs are generated and should not be hard-coded
 	  top: 0;
 	  bottom: 0;
 	  width: 9999px;   /* some huge width */
-	} 
+	}
 	.primary-navigation ul li > ul:before {
-	  right: 100%; 
+	  right: 100%;
 	}
 	.primary-navigation ul li > ul:after {
 	  left: 100%;
@@ -6065,7 +6065,7 @@ Note all DIVs are generated and should not be hard-coded
 		column-count: 1;
 	}
 	.primary-navigation ul > ul a {
-		border:none;		
+		border:none;
 	}
 	.primary-navigation ul.submenu:after{
 		clear: both;
@@ -6082,7 +6082,7 @@ Note all DIVs are generated and should not be hard-coded
 		border-left: 1px solid transparent;
 	}
 	.primary-navigation ul li ul li a{
-		padding: 0;	
+		padding: 0;
 	}
 	.primary-navigation ul li.li_level_0:last-child:hover a,
 	.primary-navigation ul li.li_level_0:last-child.focus a{
@@ -6141,7 +6141,7 @@ Note all DIVs are generated and should not be hard-coded
 		column-count: 1;
 */
 	}
-	
+
 	.primary-navigation ul ul li a{
 		font-size: 14px;
 		color: #8ac5d9;
@@ -7171,4 +7171,9 @@ a[href^=tel]{
 }
 .ie9 .work_with_partners ul li img{
   width: 95%;
+}
+
+
+.mb2{
+	margin-bottom: 2rem;
 }

@@ -24,10 +24,13 @@ get_header(); ?>
 							 <h1>CMA in the Community</h1>
               <h2>Every year, our team gives back to Baton Rouge. Here's how:</h2>
 						</div><!-- /.internal-header -->
-            <div class="link-back">
-              <a href="<?php get_post_type_archive_link( 'community' ); ?>">Go back to Community</a>
+            <div class="mb2">
+              <a href="<?php get_post_type_archive_link( 'community' ); ?>">Back to Community</a>
             </div>
 							<?php
+
+                query_posts('category_name=news,press-releases');
+
                 if ( have_posts() ) :
                 // Start the Loop.
                 while ( have_posts() ) : the_post();
@@ -39,6 +42,22 @@ get_header(); ?>
 
       					endif;
       				?>
+
+              <?php
+
+                query_posts('category_name=events');
+
+                if ( have_posts() ) :
+                // Start the Loop.
+                while ( have_posts() ) : the_post();
+
+                  // Include the page content template.
+                  get_template_part( 'content', 'single' );
+
+                endwhile;
+
+                endif;
+              ?>
 					</div><!-- .col-sm-24 col-md-16 -->
 					<div class="col-sm-24 col-md-7 col-md-offset-1 page-custom-sidebar">
 
