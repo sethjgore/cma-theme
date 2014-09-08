@@ -37,20 +37,23 @@ get_header(); ?>
 
               <?php
 
-                query_posts('cat=43');
+                $the_query = new WP_Query('cat=43');
 
-                if ( have_posts() ) :
+                if ( $the_query->have_posts() ) :
                 // Start the Loop.
-                while ( have_posts() ) : the_post();
+                while ( $the_query->have_posts() ) : $the_query->the_post();
 
                   // Include the page content template.
-                  get_template_part( 'content', 'single' );
+                  get_template_part( 'content', 'news' );
 
                 endwhile;
 
-                endif;
-              ?>
 
+                endif;
+
+                wp_reset_postdata();
+
+              ?>
           </div><!-- .col-sm-24 col-md-16 -->
           <div class="col-sm-24 col-md-7 col-md-offset-1 page-custom-sidebar">
                 <div class="sidebar-menu">
