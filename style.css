@@ -7190,6 +7190,9 @@ a[href^=tel]{
 	bottom: 0;
 }
 
+.community-box .entry-header{
+	background: none;
+}
 .community-box .entry-title a,
 .community-box .entry-content p{
 	color: white;

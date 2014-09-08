@@ -23,6 +23,7 @@
 
   <div class="community-container" style="background: url(<?=$url?>); background-size: cover;">
 
+  <div class="community-box">
 	<header class="entry-header community-header">
 		<?php
 
@@ -56,24 +57,25 @@
 			?>
 	</header><!-- .entry-header -->
 
-	<?php if ( is_search() ) : ?>
-	<div class="community-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-	<?php else : ?>
-	<div class="community-content">
-		<?php
-			//the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyfourteen' ) );
-			the_excerpt();
-			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',
-				'after'       => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-	<?php endif; ?>
+  	<?php if ( is_search() ) : ?>
+  	<div class="community-summary">
+  		<?php the_excerpt(); ?>
+  	</div><!-- .entry-summary -->
+  	<?php else : ?>
+  	<div class="community-content">
+  		<?php
+  			//the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyfourteen' ) );
+  			the_excerpt();
+  			wp_link_pages( array(
+  				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',
+  				'after'       => '</div>',
+  				'link_before' => '<span>',
+  				'link_after'  => '</span>',
+  			) );
+  		?>
+  	</div><!-- .entry-content -->
+  	<?php endif; ?>
+  </div><!-- .community-box! -->
   </div><!-- .community-container-->
 	</div><!-- .col-sm-24 -->
   </div><!-- .row -->
