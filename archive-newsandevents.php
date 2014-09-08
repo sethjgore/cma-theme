@@ -35,6 +35,7 @@ get_header(); ?>
               <h2>What's happening with CMA Technology Solutions</h2>
             </div><!-- /.internal-header -->
 
+
               <?php
 
                 $query_args = array(
@@ -56,7 +57,7 @@ get_header(); ?>
                 while ( $query->have_posts() ) : $query->the_post();
 
                   // Include the page content template.
-                  get_template_part( 'content', 'single' );
+                  get_template_part( 'content', 'news' );
 
                 endwhile;
 
