@@ -37,6 +37,18 @@ get_header(); ?>
 
               <?php
 
+                $query_args = array(
+                  'post_type' => 'post',
+                  'tax_query' => array(
+                      array(
+                          'taxonomy' => 'news',
+                          'field'    => 'slug',
+                      ),
+                  ),
+                );
+
+                $query = new WP_Query( $query_args );
+
                 if ( have_posts() ) :
                 // Start the Loop.
                 while ( have_posts() ) : the_post();
