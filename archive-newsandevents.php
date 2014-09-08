@@ -38,10 +38,10 @@ get_header(); ?>
               <?php
 
                 $query_args = array(
-                  'post_type' => 'post',
+                  'post_type' => 'newsandevents',
                   'tax_query' => array(
-                          'taxonomy' => 'news',
-                          'field'    => 'slug',
+                      'taxonomy' => 'news',
+                      'field'    => 'slug',
                   ),
                 );
 
