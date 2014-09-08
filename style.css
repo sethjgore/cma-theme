@@ -7219,6 +7219,9 @@ a[href^=tel]{
 	display: block;
 }
 
+.community-title a:hover{
+	color: rgb(230,230,230);
+}
 .community-box .community-header,
 .community-header .entry-meta{
 	background: none;
