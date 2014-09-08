@@ -37,7 +37,7 @@ get_header(); ?>
 
               <?php
 
-                query_posts('category_name=news');
+                query_posts('cat=43');
 
                 if ( have_posts() ) :
                 // Start the Loop.
@@ -53,7 +53,7 @@ get_header(); ?>
 
               <?php
 
-                query_posts('category_name=events');
+                query_posts('cat=44');
 
                 if ( have_posts() ) :
                 // Start the Loop.
