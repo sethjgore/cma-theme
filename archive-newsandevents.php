@@ -36,12 +36,31 @@ get_header(); ?>
             </div><!-- /.internal-header -->
 
               <?php
+
+                query_posts('category_name=news&press-releasae');
+
                 if ( have_posts() ) :
                 // Start the Loop.
                 while ( have_posts() ) : the_post();
 
                   // Include the page content template.
-                  get_template_part( 'content', 'news' );
+                  get_template_part( 'content', 'single' );
+
+                endwhile;
+
+                endif;
+              ?>
+
+              <?php
+
+                query_posts('category_name=events');
+
+                if ( have_posts() ) :
+                // Start the Loop.
+                while ( have_posts() ) : the_post();
+
+                  // Include the page content template.
+                  get_template_part( 'content', 'single' );
 
                 endwhile;
 
