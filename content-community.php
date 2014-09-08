@@ -73,6 +73,7 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
+	<?php endif; ?>
   </div><!-- .community-container-->
 	</div><!-- .col-sm-24 -->
   </div><!-- .row -->
