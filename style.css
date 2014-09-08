@@ -7219,8 +7219,8 @@ a[href^=tel]{
 	display: block;
 }
 
-.community-box .entry-header,
-.communtiy-box .entry-meta{
+.community-box .community-header,
+.communtiy-header .entry-meta{
 	background: none;
 }
 
