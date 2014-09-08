@@ -7236,3 +7236,7 @@ a[href^=tel]{
 .community-post-title{
 	font-size: 40px;
 }
+
+.text-blue{
+	color: #1f95bc;
+}
