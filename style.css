@@ -7177,3 +7177,13 @@ a[href^=tel]{
 .mb2{
 	margin-bottom: 2rem;
 }
+
+.community-box{
+	background: rgba(10, 48, 61, 0.8);
+	padding: 2rem;
+}
+
+.community-box .entry-title,
+.community-box .entry-content{
+	color: white;
+}

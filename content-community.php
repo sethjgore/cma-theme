@@ -19,12 +19,9 @@
       $url = $thumb['0'];
       ?>
 
-  	<div class="col-xs-24 col-sm-6 post-icon" style="background=url(<?=$url?>); background-size: cover;">
+  <div class="col-sm-24" style="background: url(<?=$url?>); background-size: cover;">
 
-  	</div><!-- .col-sm-5 -->
-  	<div class="col-xs-24 col-sm-18">
-
-	<header class="entry-header">
+	<header class="entry-header community-box">
 		<?php
 
 			if ( is_single() ) :
@@ -76,6 +73,6 @@
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 
-	</div><!-- .col-sm-19 -->
+	</div><!-- .col-sm-24 -->
   </div><!-- .row -->
 </article><!-- #post-## -->
