@@ -34,7 +34,7 @@ get_header(); ?>
                 while ( have_posts() ) : the_post();
 
                   // Include the page content template.
-                  get_template_part( 'content', 'single' );
+                  get_template_part( 'content', 'community-post' );
 
                 endwhile;
 
