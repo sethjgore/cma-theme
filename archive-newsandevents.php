@@ -37,14 +37,14 @@ get_header(); ?>
 
               <?php
 
-                $the_query = new WP_Query('category_name=news');
+               query_posts('cat=44');
 
-                if ( $the_query->have_posts() ) :
+                if ( have_posts() ) :
                 // Start the Loop.
-                while ( $the_query->have_posts() ) : $the_query->the_post();
+                while ( have_posts() ) : the_post();
 
                   // Include the page content template.
-                  get_template_part( 'content', 'news' );
+                  get_template_part( 'content', 'single' );
 
                 endwhile;
 
