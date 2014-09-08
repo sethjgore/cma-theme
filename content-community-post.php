@@ -20,7 +20,7 @@
     <div class="community-featured-image mb2">
 
       <?php if ( has_post_thumbnail() ) {
-        the_post_thumbnail( 'large' );
+        the_post_thumbnail( 'full' );
       }?>
 
     </div>
