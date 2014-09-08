@@ -25,7 +25,7 @@ get_header(); ?>
               <h2>Every year, our team gives back to Baton Rouge. Here's how:</h2>
 						</div><!-- /.internal-header -->
             <div>
-              <a href="<?php get_post_type_archive_link( 'community' ); ?>">Back to Community Page</a>
+              <a href="<?php echo get_post_type_archive_link('community'); ?>">Back to Community Page</a>
             </div>
 							<?php
 

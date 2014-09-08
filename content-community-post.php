@@ -33,7 +33,7 @@
 			endif;
 		?>
 
-    <div class="mb2">By <span class="text-blue"><?php the_author_link(); ?></span> on <span class="text-blue"><?php the_time('F j, Y'); ?></span></div>
+    <div class="mb2">by <span class="text-blue"><?php the_author_link(); ?></span> on <span class="text-blue"><?php the_time('F j, Y'); ?></span></div>
 
 		<div class="entry-meta time-author">
 			<?php
