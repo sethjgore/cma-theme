@@ -13,15 +13,14 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
   <div class="row">
-  	<div class="col-xs-24 col-sm-6 post-icon">
-  		<?php
-  		  if ( has_post_thumbnail() ) {
-        	the_post_thumbnail('thumbnail');
-        } else { ?>
-          <img src="<?php bloginfo('template_directory'); ?>/images/bkg-community.png" alt=""/>
-       <?php
-        }
-  		 ?>
+
+      <?php
+      $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' );
+      $url = $thumb['0'];
+      ?>
+
+  	<div class="col-xs-24 col-sm-6 post-icon" style="background=url(<?=$url?>); background-size: cover;">
+
   	</div><!-- .col-sm-5 -->
   	<div class="col-xs-24 col-sm-18">
 
