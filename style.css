@@ -7232,3 +7232,7 @@ a[href^=tel]{
 .community-content{
 	font-size: 1.4rem; /* 24px */
 }
+
+.community-post-title{
+	font-size: 40px;
+}
