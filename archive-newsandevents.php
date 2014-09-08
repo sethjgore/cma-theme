@@ -40,10 +40,8 @@ get_header(); ?>
                 $query_args = array(
                   'post_type' => 'post',
                   'tax_query' => array(
-                      array(
                           'taxonomy' => 'news',
                           'field'    => 'slug',
-                      ),
                   ),
                 );
 
