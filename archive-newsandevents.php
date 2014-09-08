@@ -54,7 +54,7 @@ get_header(); ?>
                       array(
                         'taxonomy' => 'cma_events_category',
                         'field'    => 'slug',
-                        'terms'    => 'press-release',
+                        'terms'    => 'press-releases',
                       ),
                     ),
                 );
