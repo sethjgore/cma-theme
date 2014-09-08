@@ -42,7 +42,7 @@ get_header(); ?>
                   'tax_query' => array(
                       'taxonomy' => 'cma_events_category',
                       'field'    => 'slug',
-                      'terms'    => 'news',
+                      'terms'    => array('news'),
                   ),
                 );
 
