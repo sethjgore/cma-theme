@@ -36,7 +36,50 @@ get_header(); ?>
             </div><!-- /.internal-header -->
 
 
-              <?php
+            <div class="row">
+              <div class="col-sm-24 col-md-12">
+                <div class="news-header">* <h3>Recent News</h3></div>
+                <?php
+
+                $query_args = array(
+                  'post_type' => 'newsandevents',
+                  'tax_query' => array(
+
+                      array(
+                        'taxonomy' => 'cma_events_category',
+                        'field'    => 'slug',
+                        'terms'    => 'news',
+                      ),
+
+                      array(
+                        'taxonomy' => 'cma_events_category',
+                        'field'    => 'slug',
+                        'terms'    => 'press-releases',
+                      ),
+                    ),
+                );
+
+                $query = new WP_Query( $query_args );
+
+                if ( $query->have_posts() ) :
+                // Start the Loop.
+                while ( $query->have_posts() ) : $query->the_post();
+
+                  // Include the page content template.
+                  get_template_part( 'content', 'news' );
+
+                endwhile;
+
+
+                endif;
+
+                wp_reset_postdata();
+
+              ?>
+              </div>
+              <div class="col-sm-24 col-md-12">
+                <div class="news-header">* <h3>Upcoming Events</h3></div>
+                <?php
 
                 $query_args = array(
                   'post_type' => 'newsandevents',
@@ -67,6 +110,8 @@ get_header(); ?>
                 wp_reset_postdata();
 
               ?>
+              </div>
+            </div>
           </div><!-- .col-sm-24 col-md-16 -->
           <div class="col-sm-24 col-md-7 col-md-offset-1 page-custom-sidebar">
                 <div class="sidebar-menu">
