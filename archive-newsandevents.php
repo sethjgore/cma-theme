@@ -49,9 +49,9 @@ get_header(); ?>
 
                 $query = new WP_Query( $query_args );
 
-                if ( have_posts() ) :
+                if ( $query->have_posts() ) :
                 // Start the Loop.
-                while ( have_posts() ) : the_post();
+                while ( $query->have_posts() ) : $query->the_post();
 
                   // Include the page content template.
                   get_template_part( 'content', 'single' );
@@ -61,7 +61,7 @@ get_header(); ?>
 
                 endif;
 
-                wp_reset_query();
+                wp_reset_postdata();
 
               ?>
           </div><!-- .col-sm-24 col-md-16 -->
