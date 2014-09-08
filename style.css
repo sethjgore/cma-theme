@@ -7201,7 +7201,7 @@ a[href^=tel]{
 
 .community-box{
 	background: rgba(10, 48, 61, 0.8);
-	padding: 2rem;
+	padding: 1rem 2rem 0rem;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -7220,11 +7220,15 @@ a[href^=tel]{
 }
 
 .community-box .community-header,
-.communtiy-header .entry-meta{
+.community-header .entry-meta{
 	background: none;
 }
 
 .community-title a,
 .community-content p{
 	color: white;
+}
+
+.community-content{
+	font-size: 1.4rem; /* 24px */
 }
