@@ -38,7 +38,7 @@ get_header(); ?>
 
             <div class="row">
               <div class="col-sm-24 col-md-12">
-                <div class="news-header">* <h3>Recent News</h3></div>
+                <div class="news-header"><h3>Recent News</h3></div>
                 <?php
 
                 $query_args = array(
@@ -54,7 +54,7 @@ get_header(); ?>
                       array(
                         'taxonomy' => 'cma_events_category',
                         'field'    => 'slug',
-                        'terms'    => 'press-releases',
+                        'terms'    => 'press-release',
                       ),
                     ),
                 );
@@ -78,7 +78,7 @@ get_header(); ?>
               ?>
               </div>
               <div class="col-sm-24 col-md-12">
-                <div class="news-header">* <h3>Upcoming Events</h3></div>
+                <div class="news-header"><h3>Upcoming Events</h3></div>
                 <?php
 
                 $query_args = array(
@@ -88,7 +88,7 @@ get_header(); ?>
                       array(
                         'taxonomy' => 'cma_events_category',
                         'field'    => 'slug',
-                        'terms'    => 'news',
+                        'terms'    => 'events',
                       ),
                     ),
                 );
