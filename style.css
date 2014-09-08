@@ -7207,7 +7207,7 @@ a[href^=tel]{
 	width: 100%;
 }
 
-.community-box:hover{
+.community-container:hover .community-box{
 	height: 100%;
 }
 
@@ -7215,7 +7215,7 @@ a[href^=tel]{
 	display: none;
 }
 
-.community-box:hover .community-box-hide{
+.community-container:hover .community-box-hide{
 	display: block;
 }
 
