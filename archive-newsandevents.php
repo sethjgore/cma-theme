@@ -37,7 +37,7 @@ get_header(); ?>
 
               <?php
 
-                query_posts('category_name=news&press-releasae');
+                query_posts('category_name=news');
 
                 if ( have_posts() ) :
                 // Start the Loop.
