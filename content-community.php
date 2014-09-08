@@ -56,7 +56,7 @@
 			endif;
 			?>
 	</header><!-- .entry-header -->
-
+  <div class="community-box-hide">
   	<?php if ( is_search() ) : ?>
   	<div class="community-summary">
   		<?php the_excerpt(); ?>
@@ -75,7 +75,8 @@
   		?>
   	</div><!-- .entry-content -->
   	<?php endif; ?>
-  </div><!-- .community-box! -->
+  </div><!-- .community-box-hide-->
+  </div><!-- .community-box -->
   </div><!-- .community-container-->
 	</div><!-- .col-sm-24 -->
   </div><!-- .row -->

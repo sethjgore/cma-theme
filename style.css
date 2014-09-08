@@ -7188,9 +7188,11 @@ a[href^=tel]{
 	padding: 2rem;
 	position: absolute;
 	bottom: 0;
+	width: 100%;
 }
 
-.community-box .entry-header{
+.community-box .entry-header,
+.communtiy-box .entry-meta{
 	background: none;
 }
 .community-box .entry-title a,
