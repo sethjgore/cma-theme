@@ -37,7 +37,7 @@ get_header(); ?>
 
               <?php
 
-                $the_query = new WP_Query('cat=43');
+                $the_query = new WP_Query('category_name' => 'news');
 
                 if ( $the_query->have_posts() ) :
                 // Start the Loop.
@@ -51,7 +51,7 @@ get_header(); ?>
 
                 endif;
 
-                wp_reset_postdata();
+                wp_reset_query();
 
               ?>
           </div><!-- .col-sm-24 col-md-16 -->
