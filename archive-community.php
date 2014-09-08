@@ -31,8 +31,8 @@ get_header(); ?>
         <div class="row">
           <div id="blog-wrapper" class="col-sm-24 col-md-16">
             <div class="internal-header">
-              <h1>CMA News and Events</h1>
-              <h2>What's happening with CMA Technology Solutions</h2>
+              <h1>CMA in the Community</h1>
+              <h2>Every year, our team gives back to Baton Rouge. Here's how:</h2>
             </div><!-- /.internal-header -->
             <header class="page-header">
             <h1 class="page-title">
@@ -68,25 +68,6 @@ get_header(); ?>
               ?>
           </div><!-- .col-sm-24 col-md-16 -->
           <div class="col-sm-24 col-md-7 col-md-offset-1 page-custom-sidebar">
-                <div class="sidebar-menu">
-                  <div class="parent-page">
-                    Sort by Category<span class="caret"></span>
-                  </div><!-- /.parent-page -->
-                  <ul class="child-pages">
-                  <?php
-                  $args = array(
-                    'orderby' => 'name',
-                    'order' => 'ASC',
-                    'hide_empty' => false,
-                    'taxonomy' => 'cma_events_category',
-                    );
-                  $categories = get_categories($args);
-                    foreach($categories as $category) {
-                      echo '<li><a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';
-                      echo ' ('. $category->count . ')</li>';  }
-                  ?>
-                  </ul>
-                </div><!-- /.sidebar-menu -->
 
             <div class="email-updates">
               <?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>

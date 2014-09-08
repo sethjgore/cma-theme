@@ -18,8 +18,8 @@ get_header(); ?>
 				<div class="row">
 					<div class="col-sm-24 col-md-16">
 						<div class="internal-header">
-							<h1><?php $title = get_the_title(); if(strlen($title)>29) echo '<span style="font-size:35px;">' . $title . '</span>'; else echo $title; ?></h1>
-							<h2><?php the_field('subtitle')?></h2>
+							<h1>CMA in the Community</h1>
+							<h2>Every year, our team gives back to Baton Rouge. Here's how:</h2>
 						</div><!-- /.internal-header -->
 						<?php
 
