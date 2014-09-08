@@ -37,8 +37,6 @@ get_header(); ?>
 
               <?php
 
-               query_posts('cat=44');
-
                 if ( have_posts() ) :
                 // Start the Loop.
                 while ( have_posts() ) : the_post();
