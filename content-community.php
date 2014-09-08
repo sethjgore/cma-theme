@@ -23,7 +23,7 @@
 
   <div class="community-container" style="background: url(<?=$url?>); background-size: cover;">
 
-  <div class="community-box">
+  <div class="community-box animated">
 	<header class="entry-header community-header">
 		<?php
 
@@ -56,7 +56,7 @@
 			endif;
 			?>
 	</header><!-- .entry-header -->
-  <div class="community-box-hide">
+  <div class="community-box-hide animated">
   	<?php if ( is_search() ) : ?>
   	<div class="community-summary">
   		<?php the_excerpt(); ?>

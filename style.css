@@ -7095,6 +7095,22 @@ Note all DIVs are generated and should not be hard-coded
     -webkit-animation-name: slideInDown;
     animation-name: slideInDown;
 }
+
+@keyframes expandUp {
+    0% {
+       height: inherit;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+.expandUp {
+    -webkit-animation-name: expandUp;
+    animation-name: expandUp;
+}
+
 @-webkit-keyframes pulse {
     0% {
         -webkit-transform: scale(1);
@@ -7191,11 +7207,24 @@ a[href^=tel]{
 	width: 100%;
 }
 
+.community-box:hover{
+	height: 100%;
+}
+
+.community-box-hide{
+	display: none;
+}
+
+.community-box:hover .community-box-hide{
+	display: block;
+}
+
 .community-box .entry-header,
 .communtiy-box .entry-meta{
 	background: none;
 }
-.community-box .entry-title a,
-.community-box .entry-content p{
+
+.community-title a,
+.community-content p{
 	color: white;
 }
