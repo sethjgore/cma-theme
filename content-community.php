@@ -19,9 +19,11 @@
       $url = $thumb['0'];
       ?>
 
-  <div class="col-sm-24" style="background: url(<?=$url?>); background-size: cover;">
+  <div class="col-sm-24">
 
-	<header class="entry-header community-box">
+  <div class="community-container" style="background: url(<?=$url?>); background-size: cover;">
+
+	<header class="entry-header community-header">
 		<?php
 
 			if ( is_single() ) :
@@ -55,11 +57,11 @@
 	</header><!-- .entry-header -->
 
 	<?php if ( is_search() ) : ?>
-	<div class="entry-summary">
+	<div class="community-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php else : ?>
-	<div class="entry-content">
+	<div class="community-content">
 		<?php
 			//the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyfourteen' ) );
 			the_excerpt();
@@ -71,8 +73,7 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-	<?php endif; ?>
-
+  </div><!-- .community-container-->
 	</div><!-- .col-sm-24 -->
   </div><!-- .row -->
 </article><!-- #post-## -->

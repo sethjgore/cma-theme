@@ -7178,12 +7178,19 @@ a[href^=tel]{
 	margin-bottom: 2rem;
 }
 
+.community-container{
+	min-height: 26rem;
+	position: relative;
+}
+
 .community-box{
 	background: rgba(10, 48, 61, 0.8);
 	padding: 2rem;
+	position: absolute;
+	bottom: 0;
 }
 
-.community-box .entry-title,
-.community-box .entry-content{
+.community-box .entry-title a,
+.community-box .entry-content p{
 	color: white;
 }
