@@ -40,10 +40,13 @@ get_header(); ?>
                 $query_args = array(
                   'post_type' => 'newsandevents',
                   'tax_query' => array(
-                      'taxonomy' => 'cma_events_category',
-                      'field'    => 'slug',
-                      'terms'    => array('news'),
-                  ),
+
+                      array(
+                        'taxonomy' => 'cma_events_category',
+                        'field'    => 'slug',
+                        'terms'    => 'news',
+                      ),
+                    ),
                 );
 
                 $query = new WP_Query( $query_args );
