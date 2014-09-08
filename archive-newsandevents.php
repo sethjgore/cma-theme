@@ -41,7 +41,7 @@ get_header(); ?>
                   'post_type' => 'newsandevents',
                   'tax_query' => array(
                       'taxonomy' => 'cma_events_category',
-                      'field'    => 'slug'
+                      'field'    => 'slug',
                       'terms'    => 'news',
                   ),
                 );
