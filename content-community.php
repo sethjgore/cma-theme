@@ -47,6 +47,7 @@
 
 				edit_post_link( __( 'Edit', 'twentyfourteen' ), '<span class="edit-link">', '</span>' );
 			?>
+      <span>By: <?php the_author_link(); ?></span> on <span><?php the_time('F j, Y'); ?></span>
 		</div><!-- .entry-meta -->
 		<?php if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) && twentyfourteen_categorized_blog() ) : ?>
 		<div class="entry-meta">
@@ -73,7 +74,8 @@
   				'link_after'  => '</span>',
   			) );
   		?>
-  	</div><!-- .entry-content -->
+  	</div><!-- .community-content -->
+    <a class="btn btn-primary" href="<?php the_permalink(); ?>">Read This Story</a>
   	<?php endif; ?>
   </div><!-- .community-box-hide-->
   </div><!-- .community-box -->
