@@ -35,7 +35,7 @@
 		?>
 
 		<div class="entry-meta time-author">
-      <div>By: <?php the_author_link(); ?> on <?php the_time('F j, Y'); ?></div>
+      <div>by <span class="text-blue"><?php the_author_link(); ?></span> on <span class="text-blue"><?php the_time('F j, Y'); ?></span></div>
       <?php
         edit_post_link( __( 'Edit', 'twentyfourteen' ), '<span class="edit-link">', '</span>' );
       ?>
