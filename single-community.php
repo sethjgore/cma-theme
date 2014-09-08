@@ -21,9 +21,12 @@ get_header(); ?>
         <div class="row">
 					<div id="blog-wrapper" class="col-sm-24 col-md-16">
 						<div class="internal-header">
-							<h1>CMA in the Community</h1>
-							<h2>CMA does give back...</h2>
+							 <h1>CMA in the Community</h1>
+              <h2>Every year, our team gives back to Baton Rouge. Here's how:</h2>
 						</div><!-- /.internal-header -->
+            <div class="link-back">
+              <?php get_post_type_archive_link( 'community' ); ?>
+            </div>
 							<?php
                 if ( have_posts() ) :
                 // Start the Loop.
