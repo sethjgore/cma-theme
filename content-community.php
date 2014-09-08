@@ -15,7 +15,7 @@
   <div class="row">
 
       <?php
-      $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' );
+      $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
       $url = $thumb['0'];
       ?>
 
