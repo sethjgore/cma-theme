@@ -51,21 +51,6 @@ get_header(); ?>
                 endif;
               ?>
 
-              <?php
-
-                query_posts('cat=44');
-
-                if ( have_posts() ) :
-                // Start the Loop.
-                while ( have_posts() ) : the_post();
-
-                  // Include the page content template.
-                  get_template_part( 'content', 'single' );
-
-                endwhile;
-
-                endif;
-              ?>
           </div><!-- .col-sm-24 col-md-16 -->
           <div class="col-sm-24 col-md-7 col-md-offset-1 page-custom-sidebar">
                 <div class="sidebar-menu">
