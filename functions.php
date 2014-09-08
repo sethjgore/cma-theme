@@ -776,7 +776,7 @@ function cma_newsandevents_init() {
     'query_var'          => true,
     'rewrite'            => array( 'slug' => 'newsandevents' ),
     'capability_type'    => 'post',
-    'has_archive'        => false,
+    'has_archive'        => true,
     'hierarchical'       => false,
     'menu_position'      => null,
     'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments')
@@ -819,7 +819,7 @@ function cma_community_init() {
     'query_var'          => true,
     'rewrite'            => array( 'slug' => 'community' ),
     'capability_type'    => 'post',
-    'has_archive'        => false,
+    'has_archive'        => true,
     'hierarchical'       => false,
     'menu_position'      => null,
     'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
