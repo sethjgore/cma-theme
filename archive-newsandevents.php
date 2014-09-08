@@ -40,8 +40,9 @@ get_header(); ?>
                 $query_args = array(
                   'post_type' => 'newsandevents',
                   'tax_query' => array(
-                      'taxonomy' => 'news',
-                      'field'    => 'slug',
+                      'taxonomy' => 'cma_events_category',
+                      'field'    => 'slug'
+                      'terms'    => 'news',
                   ),
                 );
 
