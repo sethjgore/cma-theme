@@ -24,8 +24,8 @@ get_header(); ?>
 							 <h1>CMA in the Community</h1>
               <h2>Every year, our team gives back to Baton Rouge. Here's how:</h2>
 						</div><!-- /.internal-header -->
-            <div class="mb2">
-              <a href="<?php get_post_type_archive_link( 'community' ); ?>">Back to Community</a>
+            <div>
+              <a href="<?php get_post_type_archive_link( 'community' ); ?>">Back to Community Page</a>
             </div>
 							<?php
 
