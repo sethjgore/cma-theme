@@ -17,23 +17,21 @@
 
 	<section class="news-box thumbnail">
 
-    <div class="news-box-image">
-
-      <?php if ( has_post_thumbnail() ) {
-        the_post_thumbnail( 'medium' );
-      }?>
-
-      <div class="news-box-button btn btn-primary">NEWS</div>
-
+    <div class="events-box-header p1 row">
+    <div class="col-sm-8">
+        <div class="btn btn-primary">EVENT</div>
+        <div class="events-box-calendar">
+        </div>
     </div>
+   </div>
 
     <div class="news-box-text p1">
 			<?php
 
 				if ( is_single() ) :
-					the_title( '<h2 class="news-box-title entry-title mb1">', '</h2>' );
+					the_title( '<h2 class="events-box-title entry-title mb1">', '</h2>' );
 				else :
-					the_title( '<h2 class="news-box-title entry-title mb1"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+					the_title( '<h2 class="events-box-title entry-title mb1"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 				endif;
 			?>
 

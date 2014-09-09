@@ -7308,3 +7308,19 @@ a[href^=tel]{
 	left: 1.6rem;
 	z-index: 99;
 	padding: 0.1rem 1.3rem
+}
+
+.events-box-header{
+	background: #ecf0f1;
+}
+
+.events-box-calendar{
+	border-radius: 1rem;
+	background: white;
+	position: absolute;
+	border: 1px solid rgba(0,0,0,.3);
+}
+
+.events-box-title{
+	font-size: 18px;
+}
