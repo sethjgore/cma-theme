@@ -18,18 +18,18 @@
 	<section class="news-box thumbnail">
 
     <div class="events-box-header p1 row">
-    <div class="col-sm-8">
-        <div class="btn btn-primary">EVENT</div>
+    <div class="col-sm-9">
+        <div class="events-box-button btn btn-primary">EVENT</div>
         <div class="events-box-calendar">
-        <span class="events-box-calendar-title">
+        <span class="events-box-calendar-month text-blue">
           SEPT
         </span>
-        <span class="events-box-calendar-date">
+        <span class="events-box-calendar-day text-blue">
           23
         </span>
         </div>
     </div>
-    <div class="col-sm-16">
+    <div class="col-sm-15">
       <?php
 
         if ( is_single() ) :

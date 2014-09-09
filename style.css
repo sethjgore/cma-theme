@@ -7308,6 +7308,7 @@ a[href^=tel]{
 	left: 1.6rem;
 	z-index: 99;
 	padding: 0.1rem 1.3rem
+	margin-bottom: .4rem;
 }
 
 .events-box-header{
@@ -7316,6 +7317,7 @@ a[href^=tel]{
 
 .events-box-button{
 	padding: 0.1rem 1.3rem;
+	width: 100%;
 }
 
 .events-box-calendar{
@@ -7323,6 +7325,7 @@ a[href^=tel]{
 	background: white;
 	position: absolute;
 	border: 1px solid rgba(0,0,0,.3);
+	position: relative;
 }
 
 .events-box-title{
