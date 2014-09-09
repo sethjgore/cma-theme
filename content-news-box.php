@@ -50,13 +50,13 @@
 
 		<?php if ( is_search() ) : ?>
 		<div class="entry-summary">
-			<?php the_content(); ?>
+			<?php the_excerpt(); ?>
 		</div><!-- .entry-summary -->
 		<?php else : ?>
 		<div class="entry-content">
 			<?php
 				//the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyfourteen' ) );
-				the_content();
+        the_excerpt();
 				wp_link_pages( array(
 					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',
 					'after'       => '</div>',
