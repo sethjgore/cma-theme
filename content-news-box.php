@@ -27,7 +27,7 @@
 
     </div>
 
-    <div class="news-box-text p2">
+    <div class="news-box-text p1">
 			<?php
 
 				if ( is_single() ) :

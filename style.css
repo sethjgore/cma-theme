@@ -7295,6 +7295,10 @@ a[href^=tel]{
 .news-box-author{
 	font-size: .8rem;
 }
+
+.news-box-text{
+	padding-bottom: 0rem;
+}
 .news-box-image img{
 	width: 100%;
 }
