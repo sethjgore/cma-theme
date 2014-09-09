@@ -7326,6 +7326,18 @@ a[href^=tel]{
 	position: absolute;
 	border: 1px solid rgba(0,0,0,.3);
 	position: relative;
+	text-align: center;
+	font-weight: 600;
+}
+
+.events-box-calendar-day{
+	font-size: 2.2rem;
+	line-height: 2rem;
+}
+
+.events-box-calendar-month{
+	font-size: 1.2rem;
+	line-height: 0rem;
 }
 
 .events-box-title{
