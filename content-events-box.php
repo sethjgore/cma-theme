@@ -21,6 +21,12 @@
     <div class="col-sm-8">
         <div class="btn btn-primary">EVENT</div>
         <div class="events-box-calendar">
+        <span class="events-box-calendar-title">
+          SEPT
+        </span>
+        <span class="events-box-calendar-date">
+          23
+        </span>
         </div>
     </div>
    </div>
