@@ -7329,6 +7329,7 @@ a[href^=tel]{
 	position: relative;
 	text-align: center;
 	font-weight: 600;
+	padding: .7rem;
 }
 
 .events-box-calendar-day{
