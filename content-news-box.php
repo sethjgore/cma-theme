@@ -15,7 +15,7 @@
   <div class="row">
   	<div class="col-xs-24">
 
-	<header class="news-box thumbnail">
+	<section class="news-box thumbnail">
 
     <div class="news-box-image">
 
@@ -23,7 +23,7 @@
         the_post_thumbnail( 'medium' );
       }?>
 
-      <div class="news-box-button btn btn-sm">NEWS</div>
+      <div class="news-box-button btn btn-primary">NEWS</div>
 
     </div>
 
@@ -49,7 +49,6 @@
 				endif;
 				?>
 		</div>
-	</header><!-- .entry-header -->
 
 	<?php if ( is_search() ) : ?>
 	<div class="entry-summary">
@@ -70,6 +69,7 @@
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 
+	</section><!-- .news-box -->
 	</div><!-- .col-sm-19 -->
   </div><!-- .row -->
 </article><!-- #post-## -->
