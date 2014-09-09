@@ -38,7 +38,7 @@ get_header(); ?>
 
             <div class="row">
               <div class="col-sm-24 col-md-12">
-                <div class="news-header"><h3>Recent News</h3></div>
+                <div class="news-header"><h3><span class="glyphicon glyphicon-list-alt"></span>Recent News</h3></div>
                 <?php
 
                 $query_args = array(
@@ -66,7 +66,7 @@ get_header(); ?>
                 while ( $query->have_posts() ) : $query->the_post();
 
                   // Include the page content template.
-                  get_template_part( 'content', 'news' );
+                  get_template_part( 'content', 'news-box' );
 
                 endwhile;
 
@@ -78,7 +78,7 @@ get_header(); ?>
               ?>
               </div>
               <div class="col-sm-24 col-md-12">
-                <div class="news-header"><h3>Upcoming Events</h3></div>
+                <div class="news-header"><span class="glyphicon glyphicon-calendar"></span><h3>Upcoming Events</h3></div>
                 <?php
 
                 $query_args = array(
@@ -100,7 +100,7 @@ get_header(); ?>
                 while ( $query->have_posts() ) : $query->the_post();
 
                   // Include the page content template.
-                  get_template_part( 'content', 'news' );
+                  get_template_part( 'content', 'events-box' );
 
                 endwhile;
 
