@@ -12,12 +12,16 @@
 
 <?php
 
-$date = DateTime::createFromFormat('Ymd', get_field('event_date'));
+  if(the_field('event_data')){
+    $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
 
-$event_month = $date->format('M');
+    $event_month = $date->format('M');
 
-$event_day = $date->format('d');
-
+    $event_day = $date->format('d');
+  }else{
+    $event_month = "ETA";
+    $event_day = "??";
+  }
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
