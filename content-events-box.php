@@ -29,17 +29,19 @@
         </span>
         </div>
     </div>
+    <div class="col-sm-16">
+      <?php
+
+        if ( is_single() ) :
+          the_title( '<h2 class="events-box-title entry-title mb1">', '</h2>' );
+        else :
+          the_title( '<h2 class="events-box-title entry-title mb1"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+        endif;
+      ?>
+    </div>
    </div>
 
     <div class="news-box-text p1">
-			<?php
-
-				if ( is_single() ) :
-					the_title( '<h2 class="events-box-title entry-title mb1">', '</h2>' );
-				else :
-					the_title( '<h2 class="events-box-title entry-title mb1"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-				endif;
-			?>
 
 	    <div class="mb1 news-box-author">by <span class="text-blue"><?php the_author_link(); ?></span> on <span class="text-blue"><?php the_time('F j, Y'); ?></span></div>
 			<?php if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) && twentyfourteen_categorized_blog() ) : ?>
