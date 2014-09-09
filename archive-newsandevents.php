@@ -38,7 +38,7 @@ get_header(); ?>
 
             <div class="row">
               <div class="col-sm-24 col-md-12">
-                <div class="news-header"><h3 class="text-blue-dark"><span class="text-blue newsandevents-icons glyphicon glyphicon-list-alt"></span>Recent News</h3></div>
+                <div class="news-header"><h3 class="text-blue-dark"><span class="text-blue news-icons glyphicon glyphicon-list-alt"></span>Recent News</h3></div>
                 <?php
 
                 $query_args = array(

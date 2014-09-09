@@ -39,8 +39,6 @@
 
 	    <div class="mb1">by <span class="text-blue"><?php the_author_link(); ?></span> on <span class="text-blue"><?php the_time('F j, Y'); ?></span></div>
 				<?php
-					endif;
-
 					edit_post_link( __( 'Edit', 'twentyfourteen' ), '<span class="edit-link">', '</span>' );
 				?>
 			</div><!-- .entry-meta -->
