@@ -7347,6 +7347,7 @@ a[href^=tel]{
 .events-box-calendar-month{
 	font-size: 1.2rem;
 	line-height: 0rem;
+	text-transform: uppercase;
 }
 
 .events-box-title{
