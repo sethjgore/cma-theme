@@ -22,7 +22,7 @@
       <?php if ( has_post_thumbnail() ) {
         the_post_thumbnail( 'medium' );
       }else{
-        echo '<div class="glyphicon glyphicon-list-alt news-box-image-placeholder"></div>'
+        echo '<div class="glyphicon glyphicon-list-alt news-box-image-placeholder"></div>';
         }?>
 
       <div class="news-box-button btn btn-primary">NEWS</div>
