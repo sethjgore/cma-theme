@@ -7344,3 +7344,8 @@ a[href^=tel]{
 .events-box-title{
 	font-size: 18px;
 }
+
+.type-newsandevents + .hentry{
+	border: 0;
+	padding: 0;
+}
