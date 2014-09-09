@@ -7310,6 +7310,14 @@ a[href^=tel]{
 	padding: 0.1rem 1.3rem;
 }
 
+.news-box-image-placeholder{
+	font-size: 5rem;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-top: 4rem;
+}
+
 .events-box-header{
 	background: #ecf0f1;
 }
@@ -7324,7 +7332,7 @@ a[href^=tel]{
 	border-radius: .6rem;
 	background: white;
 	position: absolute;
-	border: 1px solid rgba(0,0,0,.3);
+	border: 1px solid rgba(0,0,0,.1);
 	position: relative;
 	text-align: center;
 	font-weight: 600;
@@ -7345,7 +7353,9 @@ a[href^=tel]{
 	font-size: 18px;
 }
 
+/* Removes horz line between posts */
 .type-newsandevents + .hentry{
-	border: 0;
-	padding: 0;
+	border: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
 }
