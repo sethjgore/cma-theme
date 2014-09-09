@@ -7318,10 +7318,11 @@ a[href^=tel]{
 .events-box-button{
 	padding: 0.1rem 1.3rem;
 	width: 100%;
+	margin-bottom: .5rem;
 }
 
 .events-box-calendar{
-	border-radius: 1rem;
+	border-radius: .6rem;
 	background: white;
 	position: absolute;
 	border: 1px solid rgba(0,0,0,.3);
