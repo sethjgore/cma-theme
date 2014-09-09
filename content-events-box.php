@@ -10,6 +10,16 @@
  */
 ?>
 
+<?php
+
+$date = DateTime::createFromFormat('Ymd', get_field('date_picker'));
+
+$event_month = $date->format('M');
+
+$event_day = $date->format('d');
+
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
   <div class="row">
@@ -22,10 +32,10 @@
         <div class="events-box-button btn btn-primary">EVENT</div>
         <div class="events-box-calendar">
         <span class="events-box-calendar-month text-blue">
-          SEPT
+          <?php echo $event_month; ?>
         </span>
         <span class="events-box-calendar-day text-blue">
-          23
+          <?php echo $event_day; ?>
         </span>
         </div>
     </div>

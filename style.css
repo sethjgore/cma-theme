@@ -7307,8 +7307,7 @@ a[href^=tel]{
 	top: 1rem;
 	left: 1.6rem;
 	z-index: 99;
-	padding: 0.1rem 1.3rem
-	margin-bottom: .4rem;
+	padding: 0.1rem 1.3rem;
 }
 
 .events-box-header{
