@@ -12,7 +12,7 @@
 
 <?php
 
-  if(the_field('event_date')){
+  if(get_field('event_date')){
     $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
 
     $event_month = $date->format('M');
