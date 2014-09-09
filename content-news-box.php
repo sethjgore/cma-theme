@@ -15,47 +15,43 @@
   <div class="row">
   	<div class="col-xs-24">
 
-	<header class="entry-header">
+	<header class="news-box thumbnail">
 
-    <div class="community-featured-image mb2">
+    <div class="news-box-image mb2">
 
       <?php if ( has_post_thumbnail() ) {
-        the_post_thumbnail( 'full' );
+        the_post_thumbnail( 'medium' );
       }?>
 
+      <div class="news-box-button btn btn-sm">NEWS</div>
+
     </div>
-		<?php
 
-			if ( is_single() ) :
-				the_title( '<h1 class="community-post-title entry-title">', '</h1>' );
-			else :
-				the_title( '<h1 class="community-post-title entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
-			endif;
-		?>
-
-    <div class="mb2">by <span class="text-blue"><?php the_author_link(); ?></span> on <span class="text-blue"><?php the_time('F j, Y'); ?></span></div>
-
-		<div class="entry-meta time-author">
+    <div class="news-box-text p2">
 			<?php
-				if ( 'post' == get_post_type() )
-					twentyfourteen_posted_on();
 
-				if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
+				if ( is_single() ) :
+					the_title( '<h2 class="news-box-title entry-title mb1">', '</h2>' );
+				else :
+					the_title( '<h2 class="news-box-title entry-title mb1"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				endif;
 			?>
-			<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyfourteen' ), __( '1 Comment', 'twentyfourteen' ), __( '% Comments', 'twentyfourteen' ) ); ?></span>
+
+	    <div class="mb1">by <span class="text-blue"><?php the_author_link(); ?></span> on <span class="text-blue"><?php the_time('F j, Y'); ?></span></div>
+				<?php
+					endif;
+
+					edit_post_link( __( 'Edit', 'twentyfourteen' ), '<span class="edit-link">', '</span>' );
+				?>
+			</div><!-- .entry-meta -->
+			<?php if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) && twentyfourteen_categorized_blog() ) : ?>
+			<div class="entry-meta">
+				<div class="blog-cat-links"><span><?php echo get_the_category_list( _x( '</span><span>', 'Used between list items, there is a space after the comma.', 'twentyfourteen' ) ); ?></span></div>
+			</div>
 			<?php
 				endif;
-
-				edit_post_link( __( 'Edit', 'twentyfourteen' ), '<span class="edit-link">', '</span>' );
-			?>
-		</div><!-- .entry-meta -->
-		<?php if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) && twentyfourteen_categorized_blog() ) : ?>
-		<div class="entry-meta">
-			<div class="blog-cat-links"><span><?php echo get_the_category_list( _x( '</span><span>', 'Used between list items, there is a space after the comma.', 'twentyfourteen' ) ); ?></span></div>
+				?>
 		</div>
-		<?php
-			endif;
-			?>
 	</header><!-- .entry-header -->
 
 	<?php if ( is_search() ) : ?>

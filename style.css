@@ -7189,9 +7189,35 @@ a[href^=tel]{
   width: 95%;
 }
 
+.mb1{
+	margin-bottom: 1rem;
+}
 
 .mb2{
 	margin-bottom: 2rem;
+}
+
+.m1{
+	margin-left: 1rem;
+}
+
+.ml2{
+	margin-left: 2rem;
+}
+
+.px1{
+	padding-right: 1rem;
+	padding-left: 1rem;
+}
+.px2{
+	padding-right: 2rem;
+	padding-left: 2rem;
+}
+.p1{
+	padding: 1rem;
+}
+.p2{
+	padding: 2rem;
 }
 
 .community-container{
@@ -7242,4 +7268,26 @@ a[href^=tel]{
 
 .text-blue{
 	color: #1f95bc;
+}
+
+.text-blue-dark{
+	color: #115376
+}
+
+
+
+.newsandevents-icons{
+	margin-right: 0.5rem;
+}
+
+.news-box{
+	overflow: hidden;
+	padding: 0;
+	box-shadow: 0 3px 6px -2px rgba(0,0,0,.3);
+}
+
+.news-box-button{
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
 }
