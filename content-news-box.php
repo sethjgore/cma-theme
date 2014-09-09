@@ -17,7 +17,7 @@
 
 	<header class="news-box thumbnail">
 
-    <div class="news-box-image mb2">
+    <div class="news-box-image">
 
       <?php if ( has_post_thumbnail() ) {
         the_post_thumbnail( 'medium' );
@@ -37,11 +37,10 @@
 				endif;
 			?>
 
-	    <div class="mb1">by <span class="text-blue"><?php the_author_link(); ?></span> on <span class="text-blue"><?php the_time('F j, Y'); ?></span></div>
+	    <div class="mb1 news-box-author">by <span class="text-blue"><?php the_author_link(); ?></span> on <span class="text-blue"><?php the_time('F j, Y'); ?></span></div>
 				<?php
 					edit_post_link( __( 'Edit', 'twentyfourteen' ), '<span class="edit-link">', '</span>' );
 				?>
-			</div><!-- .entry-meta -->
 			<?php if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) && twentyfourteen_categorized_blog() ) : ?>
 			<div class="entry-meta">
 				<div class="blog-cat-links"><span><?php echo get_the_category_list( _x( '</span><span>', 'Used between list items, there is a space after the comma.', 'twentyfourteen' ) ); ?></span></div>

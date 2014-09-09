@@ -7197,12 +7197,20 @@ a[href^=tel]{
 	margin-bottom: 2rem;
 }
 
-.m1{
+.ml1{
 	margin-left: 1rem;
 }
 
 .ml2{
 	margin-left: 2rem;
+}
+
+.mr1{
+	margin-right: 1rem;
+}
+
+.mr2{
+	margin-right: 2rem;
 }
 
 .px1{
@@ -7219,7 +7227,6 @@ a[href^=tel]{
 .p2{
 	padding: 2rem;
 }
-
 .community-container{
 	min-height: 26rem;
 	position: relative;
@@ -7275,7 +7282,6 @@ a[href^=tel]{
 }
 
 
-
 .newsandevents-icons{
 	margin-right: 0.5rem;
 }
@@ -7286,8 +7292,15 @@ a[href^=tel]{
 	box-shadow: 0 3px 6px -2px rgba(0,0,0,.3);
 }
 
+.news-box-author{
+	font-size: .8rem;
+}
+.news-box-image img{
+	width: 100%;
+}
 .news-box-button{
 	position: absolute;
 	top: 1rem;
-	left: 1rem;
-}
+	left: 1.6rem;
+	z-index: 99;
+	padding: 0.1rem 1.3rem
