@@ -120,7 +120,9 @@ get_header(); ?>
                   </div><!-- /.parent-page -->
                   <ul class="child-pages">
                   <?php
-                  $terms = get_terms('cma_events_category');
+
+                    $terms = get_terms('cma_events_category');
+
                     foreach($terms as $term) {
 
                       $term_link = get_term_link( $term );
@@ -131,8 +133,11 @@ get_header(); ?>
                       }
 
                       echo '<li><a href="' . esc_url($term_link) . '" title="' . sprintf( __( "View all posts in %s" ), $term->name ) . '" ' . '>' . $term->name.'</a>';
-                      echo ' ('. $term->count . ')</li>';  }
+                      echo ' ('. $term->count . ')</li>';
 
+                    }
+
+                    ?>
                   </ul>
                 </div><!-- /.sidebar-menu -->
 
