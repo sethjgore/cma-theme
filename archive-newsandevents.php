@@ -120,17 +120,19 @@ get_header(); ?>
                   </div><!-- /.parent-page -->
                   <ul class="child-pages">
                   <?php
-                  $args = array(
-                    'orderby' => 'name',
-                    'order' => 'ASC',
-                    'hide_empty' => false,
-                    'taxonomy' => 'cma_events_category',
-                    );
-                  $categories = get_categories($args);
-                    foreach($categories as $category) {
-                      echo '<li><a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';
-                      echo ' ('. $category->count . ')</li>';  }
-                  ?>
+                  $terms = get_terms('cma_events_category');
+                    foreach($terms as $term) {
+
+                      $term_link = get_term_link( $term );
+
+                      // If there was an error, continue to the next term.
+                      if ( is_wp_error( $term_link ) ) {
+                          continue;
+                      }
+
+                      echo '<li><a href="' . esc_url($term_link) . '" title="' . sprintf( __( "View all posts in %s" ), $term->name ) . '" ' . '>' . $term->name.'</a>';
+                      echo ' ('. $term->count . ')</li>';  }
+
                   </ul>
                 </div><!-- /.sidebar-menu -->
 

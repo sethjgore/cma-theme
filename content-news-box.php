@@ -17,17 +17,20 @@
 
 	<section class="news-box thumbnail">
 
-    <div class="news-box-image">
+     <a href="<?php the_permalink()?>">
 
-      <?php if ( has_post_thumbnail() ) {
-        the_post_thumbnail( 'medium' );
-      }else{
-        echo '<div class="glyphicon glyphicon-list-alt news-box-image-placeholder"></div>';
-        }?>
+       <div class="news-box-image">
 
-      <div class="news-box-button btn btn-primary">NEWS</div>
+       <?php if ( has_post_thumbnail() ) {
+          the_post_thumbnail( 'medium' );
+        }else{
+          echo '<div class="glyphicon glyphicon-list-alt news-box-image-placeholder"></div>';
+          }?>
 
-    </div>
+        <div class="news-box-button btn btn-primary">NEWS</div>
+
+      </div>
+    </a>
 
     <div class="news-box-text p1">
 			<?php
