@@ -22,7 +22,7 @@ get_header(); ?>
 <div id="main-content" class="main-content">
 
 
-  <div id="primary" class="content-area">
+  <div id="primary" class="content-area mb2">
     <div id="content" class="site-content" role="main">
     <img class="page-bkg-img" src="<?php bloginfo('template_directory'); ?>/images/bkg-blog.jpg" alt=""/>
 
