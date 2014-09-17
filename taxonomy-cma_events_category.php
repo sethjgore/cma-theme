@@ -35,7 +35,11 @@ get_header(); ?>
               <h2>What's happening with CMA Technology Solutions</h2>
             </div><!-- /.internal-header -->
 
-
+            <header class="page-header">
+            <h1 class="page-title">
+              <?php $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); echo $term->name; ?>
+            </h1>
+          </header><!-- .page-header -->
          <?php
                 if ( have_posts() ) :
                 // Start the Loop.
